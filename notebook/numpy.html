@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. 1. はじめに &#8212; 実践データ科学</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Pythonによるデータ解析と可視化" href="data-analysis.html" />
+    <link rel="prev" title="はじめに" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/neko.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">実践データ科学</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  データ科学を学ぶにあたって
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. 1.
+   <font color="Crimson">
+    はじめに
+   </font>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  scikit-learn を利用した機械学習
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="data-analysis.html">
+   5. Pythonによるデータ解析と可視化
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/numpy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/tugsisilo/statistics-basic/tree/main/notebook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/tugsisilo/statistics-basic/blob/main/notebook/numpy.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. 1.
+   <font color="Crimson">
+    はじめに
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.1. 1-1.
+     <font color="Crimson">
+      アシスタント
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1.2. 1-2.
+     <font color="Crimson">
+      開始前に行うこと（重要）
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.3. 1-3.
+     <font color="Crimson">
+      到達目標
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-numpy-font">
+     1.4. 1-4.
+     <font color="Crimson">
+      NumPy とは？
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.5. 1-5.
+     <font color="Crimson">
+      学習環境について
+     </font>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       1.5.1. 1-5-1.
+       <font color="Crimson">
+        アクセラレータの利用
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     1.6. 1-6.
+     <font color="Crimson">
+      学習の進め方
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   2. 2.
+   <font color="Crimson">
+    ベクトル
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.1. 2-4.
+     <font color="Crimson">
+      算術関数
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   3. 3.
+   <font color="Crimson">
+    行列
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     3.1. 3-2.
+     <font color="Crimson">
+      行列に対する基本演算
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     3.2. 3-3.
+     <font color="Crimson">
+      行列とベクトルの積
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     3.3. 3-4.
+     <font color="Crimson">
+      逆行列と線形連立方程式
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     3.4. 3-5.
+     <font color="Crimson">
+      要素の確認と変更
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   4. 4.
+   <font color="Crimson">
+    ベクトル・行列の生成
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     4.1. 4-1.
+     <font color="Crimson">
+      ゼロ行列
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     4.2. 4-2.
+     <font color="Crimson">
+      単位行列
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     4.3. 4-3.
+     <font color="Crimson">
+      一定間隔で値を並べたベクトル
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     4.4. 4-4.
+     <font color="Crimson">
+      ランダムな値を持つ行列
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1. <font color="Crimson">はじめに</font></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. 1.
+   <font color="Crimson">
+    はじめに
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     1.1. 1-1.
+     <font color="Crimson">
+      アシスタント
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1.2. 1-2.
+     <font color="Crimson">
+      開始前に行うこと（重要）
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1.3. 1-3.
+     <font color="Crimson">
+      到達目標
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#font-color-crimson-numpy-font">
+     1.4. 1-4.
+     <font color="Crimson">
+      NumPy とは？
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     1.5. 1-5.
+     <font color="Crimson">
+      学習環境について
+     </font>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       1.5.1. 1-5-1.
+       <font color="Crimson">
+        アクセラレータの利用
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     1.6. 1-6.
+     <font color="Crimson">
+      学習の進め方
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   2. 2.
+   <font color="Crimson">
+    ベクトル
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.1. 2-4.
+     <font color="Crimson">
+      算術関数
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   3. 3.
+   <font color="Crimson">
+    行列
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     3.1. 3-2.
+     <font color="Crimson">
+      行列に対する基本演算
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     3.2. 3-3.
+     <font color="Crimson">
+      行列とベクトルの積
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     3.3. 3-4.
+     <font color="Crimson">
+      逆行列と線形連立方程式
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     3.4. 3-5.
+     <font color="Crimson">
+      要素の確認と変更
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   4. 4.
+   <font color="Crimson">
+    ベクトル・行列の生成
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     4.1. 4-1.
+     <font color="Crimson">
+      ゼロ行列
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     4.2. 4-2.
+     <font color="Crimson">
+      単位行列
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     4.3. 4-3.
+     <font color="Crimson">
+      一定間隔で値を並べたベクトル
+     </font>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     4.4. 4-4.
+     <font color="Crimson">
+      ランダムな値を持つ行列
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <p><font color="Crimson" size=6em>Colaboratory で学ぶ NumPy入門</font></p>
+<p>version 0.3 (2021/5/27)</p>
+<p>教材作成：一関高専　小池 敦</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-crimson-font">
+<h1><span class="section-number">1. </span>1. <font color="Crimson">はじめに</font><a class="headerlink" href="#font-color-crimson-font" title="Permalink to this headline">¶</a></h1>
+<p>本教材は Colaboratory というサービスを利用して Python の数値計算ライブラリである NumPy　の使い方を学ぶためのものです．
+このセクションでは，教材の利用方法などについて説明します．</p>
+<div class="section" id="id1">
+<h2><span class="section-number">1.1. </span>1-1. <font color="Crimson">アシスタント</font><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>受講者の理解を助けるためのアシスタントとして「ぱおーん君」に登場していただきます．分かりにくいところの補足説明や雑談等をします．</p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(ぱおーん君です．よろしくお願いします．ぱおーん！)</font></p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">1.2. </span>1-2. <font color="Crimson">開始前に行うこと（重要）</font><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>まず，Chrome ブラウザを利用して，本教材のURLにアクセスし，画面の指示に従い Google アカウントにログインしてください．その後，<font color="Crimson">ブラウザ表示画面左上の「ファイル」をクリックし，さらにポップアップで出てくる項目から「ドライブにコピーを保存」をクリックしてください．</font>これにより，本教材のコピーが自分のGoogleドライブに保存され，自分で書いたプログラムを実行できるようになります．</p>
+<p>また，多くのセルが非表示になっていると思われるため，同じく<font color="Crimson">ブラウザ表示画面上の「表示」をクリックし，さらにその項目から「セクションを展開」をクリックし，非表示のセルを表示させてください．</p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(元の教材ファイルは書き込み不可になっているため，そのままでは実習に使えません)</font></p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">1.3. </span>1-3. <font color="Crimson">到達目標</font><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>基本的な NumPy の使い方を習得することを目標とします．</p>
+</div>
+<div class="section" id="font-color-crimson-numpy-font">
+<h2><span class="section-number">1.4. </span>1-4. <font color="Crimson">NumPy とは？</font><a class="headerlink" href="#font-color-crimson-numpy-font" title="Permalink to this headline">¶</a></h2>
+<p>NumPy は，Python で科学技術などを行う際に使用する基本的なライブラリです．ベクトルや行列を扱えるほか，線形代数や統計の基本処理や離散フーリエ変換を行うこともできます．
+また，C言語でコンパイルされているため，C言語並みに高速に動作します．</p>
+<p>使い方の概要や詳細については，<a class="reference external" href="https://numpy.org/doc/stable/user/index.html">NumPyユーザーガイド</a>をご覧ください．</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">1.5. </span>1-5. <font color="Crimson">学習環境について</font><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>本教材では学習環境として Colaboratory を利用します．
+Colaboratory（略称：Colab）は Google が提供するPython 実行環境です．
+ユーザのセットアップが不要で，ブラウザから使用できることが特徴です．
+より詳細には <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">Jupyter Notebook</a> と呼ばれるPython実行環境を Google がホスティングしているもの（ユーザのPC上で動作させる代わりに Google のサーバ上で動作させるようにしたもの）になります．
+Colab のより詳細な情報については <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Colabの紹介ページ</a>をご覧ください．</p>
+<div class="section" id="id5">
+<h3><span class="section-number">1.5.1. </span>1-5-1. <font color="Crimson">アクセラレータの利用</font><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Pythonプログラムは標準的にはCPU上で実行されますが，ニューラルネットワーク等の一部のライブラリについては，CPUの代わりにGPUなどのプロセッサ（アクセラレータ）上で実行することで高速に動作させることが可能です．
+Colab上で GPU を利用するにはブラウザ表示画面上部の「ランタイム」から「ランタイムのタイプを変更」と進み，「ハードウェアアクセラレータ」を「GPU」にします．ただし，特に必要がない限り，この設定変更を行う必要はありません．少なくとも，この教材においては，「GPU」を選択する必要はありません．</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">1.6. </span>1-6. <font color="Crimson">学習の進め方</font><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>上から順に読み進み，<font color="blue">【実習】</font>と書いてある箇所でコードを書いて実行してください．基本的に入力するコードの前に見本のコードが書かれており，見本と同じコードを書けば正しく動作するようになっています（見本コードの上下に入っている区切り線は入力する必要ありません）．理解を深めるには，見本とは異なるコードを書いて試してみることも役立つと思います．
+なお， Colab では，コードが書かれている領域をコードセル，説明文等が書かれている領域をテキストセルといいます．</p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(テキストセルではマークダウン記法と呼ばれる書き方を使用することができ，これにより文字修飾等を簡単に行うことができます．具体例については本教材のテキストセルをダブルクリックしてみてください)</font></p>
+<p>コードの実行は，コードセル左の実行ボタン（マウスカーソルを合わせると三角マークになるボタン）を押すか，キーボードの「shift」+「enter」を同時に押すことで行えます．</p>
+<p><font color="blue">【実習】<span class="math notranslate nohighlight">\(1+2=3\)</span> であることを確認する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(コードセルで「shift」+「enter」を押すと，コードを実行するだけではなくカーソルを次のセルに移動させますが，もし実行後にカーソルを移動させたくない場合は「ctrl」+「enter」を押します)</font></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id7">
+<h1><span class="section-number">2. </span>2. <font color="Crimson">ベクトル</font><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>NumPyでベクトルや行列を表すためのクラスとして，ndarray があります．
+まずはベクトルの処理について学びます．</p>
+<p>コードは上から順に実行してください（前の計算結果を使用します）．</p>
+<p>##2-1. <font color="Crimson">ベクトルの生成</font></p>
+<p>NumPy の ndarray クラスを用いてベクトルを生成するには NumPy の array 関数にリストを渡します．</p>
+<p>Numpy を使うには numpy をインポートします．
+<a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#how-to-import-numpy">numpyには np という別名を付ける</a>ことが一般的です．</p>
+<p><font color="blue">【実習】numpy をインポート後，ベクトル <code class="docutils literal notranslate"><span class="pre">x=[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> を生成する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(リストをprintすると，<code class="docutils literal notranslate"><span class="pre">[6,</span> <span class="pre">7,</span> <span class="pre">8]</span></code>のように要素間にカンマ(,)が入りますが，ndarrayのベクトルをprintすると<code class="docutils literal notranslate"><span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code>のようにカンマが入りません．これによりリストとベクトルを区別することができます．)</font></p>
+<p>生成したベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>のデータ型を確認するには，<code class="docutils literal notranslate"><span class="pre">type(x)</span></code>と書きます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span></code> の型を確認する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>生成したベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>の形（要素数）を確認するには，<code class="docutils literal notranslate"><span class="pre">x.shape</span></code>と書きます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span></code> の形(要素数)を確認する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(ベクトルの<code class="docutils literal notranslate"><span class="pre">shape</span></code>は要素数1のタプルになります．値は3になっていますが，これは，１次元配列でその要素数が3であるという意味です．)</font></p>
+<p>##2-2. <font color="Crimson">ベクトルの基本演算</font></p>
+<p>ベクトル <code class="docutils literal notranslate"><span class="pre">x,y</span></code> の足し算は<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>，引き算は<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> とすれば計算できます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x=[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> と<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3]</span></code> に対して， <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>と<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> を計算する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>掛け算や割り算についても同じ位置の要素ごとに演算が行われます．通常のベクトルの演算と異なるので注意が必要です．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x=[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> と<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3]</span></code> に対して， <code class="docutils literal notranslate"><span class="pre">x</span></code>と <code class="docutils literal notranslate"><span class="pre">y</span></code> の要素ごとの掛け算と割り算を計算する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(同じ位置の要素ごとの積のことは，他の積と区別してアダマール積と呼ばれます．)</font></p>
+<p>ベクトル<code class="docutils literal notranslate"><span class="pre">u,v</span></code>の内積を行うには<code class="docutils literal notranslate"><span class="pre">np.dot(u,v)</span></code>，外積を行うには<code class="docutils literal notranslate"><span class="pre">np.cross(u,v)</span></code>とします．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">u=[3</span> <span class="pre">4</span> <span class="pre">0]</span></code> と<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[-4</span> <span class="pre">3</span> <span class="pre">0]</span></code> に対して， <code class="docutils literal notranslate"><span class="pre">u</span></code>と <code class="docutils literal notranslate"><span class="pre">v</span></code> の内積と外積を計算する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(ndarrayによるベクトルには縦ベクトル（列ベクトル），横ベクトル（行ベクトル）といった方向の概念がないので注意しましょう．ベクトルと呼んでいますが，単にベクトル等の演算をサポートする１次元配列のことです．方向が必要な時は，ベクトルでなく行列(２次元配列)を使えばよいですが，ベクトルと行列は別物(ベクトルは１次元配列で行列は２次元配列)なので注意しましょう．詳細は<a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#how-to-convert-a-1d-array-into-a-2d-array-how-to-add-a-new-axis-to-an-array">NumPyユーザガイド</a>を参照ください．)</font></p>
+<p>##2-3. <font color="Crimson">ブロードキャスト</font></p>
+<p>ベクトルにスカラーをかけると，ベクトルの各要素にスカラー値が掛け算されます．このようにある演算をベクトル（や行列）の全要素に適用することをブロードキャストといいます．</p>
+<p>Numpyでは，乗算だけでなく，除算，加算，減算，べき乗などもブロードキャストできます．</p>
+<p><font color="blue">【実習】 ブロードキャストを利用してベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>の各要素を2倍する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】 ブロードキャストを利用してベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>の各要素に10を足す</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】 ブロードキャストを利用してベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>の各要素を2乗する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="section" id="id8">
+<h2><span class="section-number">2.1. </span>2-4. <font color="Crimson">算術関数</font><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>NumPyの算術関数をベクトルに適用すると，基本的には要素ごとに計算します．</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code>: eのべき乗</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.log(x)</span></code>: 対数（底はe）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.sqrt(x)</span></code>: 平方根</p></li>
+</ul>
+<p>使用可能な算術関数については，<a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">NumPy API ReferenceのMathematical functions</a>をご覧ください．</p>
+<p><font color="blue">【実習】 ベクトルの各要素の平方根をとる</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>##2-5. <font color="Crimson">要素の確認と変更</font></p>
+<p>リストと同様の書き方でベクトルの要素にアクセスできます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の2番目（index 1）の要素にアクセスする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>リストと同様，スライスを使って複数の要素にアクセスすることもできます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の先頭2要素にアクセスする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">x[0:2]</span></code> と書いた時，インデックス 0 は含まれるが，インデックス 2 は含まれないことに注意しましょう．つまりこの書き方ではインデックスが 0 以上 1 以下の要素が抜き出されます)</font></p>
+<p>要素の値を変更するには，指定要素に値を代入します．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の3番目(index 2)の要素の値を20に変更する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>スライスを使って複数要素に同時に値を代入することもできます．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">20]</span></code> の先頭2要素の値を30, 31に変更する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(他にも様々なアクセス方法がありますが，省略します．)</font></p>
+<p>##2-6. <font color="Crimson">ベクトルのコピー</font></p>
+<p>ベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>をベクトル<code class="docutils literal notranslate"><span class="pre">y</span></code>にコピーする際は，<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.copy(x)</span></code> と書きます．
+決して <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> と書いてはいけません．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の値をベクトル <code class="docutils literal notranslate"><span class="pre">y</span></code> にコピーする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="c1">#y = x # Wrong</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> と書いてしまうと，変数<code class="docutils literal notranslate"><span class="pre">y</span></code>と変数<code class="docutils literal notranslate"><span class="pre">x</span></code>が同じオブジェクトIDを持つことになり，<code class="docutils literal notranslate"><span class="pre">y</span></code>は<code class="docutils literal notranslate"><span class="pre">x</span></code>の別名を表すことになってしまいます．つまり，<code class="docutils literal notranslate"><span class="pre">x</span></code>の値を変更すると勝手に<code class="docutils literal notranslate"><span class="pre">y</span></code>の値も変わってしまいします．リストでは，<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x[:]</span></code>という書き方でコピーができましたが，NumPy の ndarray ではできません（これも<code class="docutils literal notranslate"><span class="pre">y</span></code>が<code class="docutils literal notranslate"><span class="pre">x</span></code>の別名になってしまう）ので注意しましょう．)</font></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id9">
+<h1><span class="section-number">3. </span>3. <font color="Crimson">行列</font><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<p>##3-1. <font color="Crimson">行列の生成</font></p>
+<p>NumPy の ndarray クラスを用いて行列を生成するには NumPy の array 関数に２次元リストを渡します．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}\)</span> を生成する
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>生成した行列<code class="docutils literal notranslate"><span class="pre">X</span></code>の形（行と列それぞれの要素数）を確認するには，<code class="docutils literal notranslate"><span class="pre">X.shape</span></code>と書きます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}\)</span> の形（行と列の要素数）を確認する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(1行（もしくは１列）の行列とベクトルは厳密に区別されますので注意しましょう．行列は２次元配列に線形代数の機能を追加したものであり，ベクトルは１次元配列に線形代数の機能を追加したものです．<code class="docutils literal notranslate"><span class="pre">shape</span></code>で得られるタプルの要素数は，ベクトルでは1つ，行列では2つになります．)</font></p>
+<div class="section" id="id10">
+<h2><span class="section-number">3.1. </span>3-2. <font color="Crimson">行列に対する基本演算</font><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>###3-2-1. <font color="Crimson">加減乗除</font></p>
+<p>行列に対する加減乗除は同じ位置の成分同士に対して行われます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}, Y=\begin{bmatrix}5 &amp; 6\\7 &amp; 8\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(X+Y\)</span>を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">+</span><span class="n">Y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###3-2-2. <font color="Crimson">算術関数</font></p>
+<p>算術計算の関数も基本的には要素ごとに計算されます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}\)</span> に対して，成分ごとに対数をとる</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###3-2-3. <font color="Crimson">アダマール積と行列積</font></p>
+<p>行列 <code class="docutils literal notranslate"><span class="pre">X,Y</span></code> に対して，<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">*</span> <span class="pre">Y</span></code> と書くと，<code class="docutils literal notranslate"><span class="pre">X</span></code> と <code class="docutils literal notranslate"><span class="pre">Y</span></code> の成分ごとの積(アダマール積)が計算されます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}, Y=\begin{bmatrix}5 &amp; 6\\7 &amp; 8\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(X\)</span>と<span class="math notranslate nohighlight">\(Y\)</span>の成分ごとの積(アダマール積)を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="n">Y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(行列の成分ごとに積をとったもののことをアダマール積といいます．用語としては便利ですが，万人に通じる用語ではないので，使用する際は注意しましょう．)</font></p>
+<p>行列<code class="docutils literal notranslate"><span class="pre">X</span></code>と行列<code class="docutils literal notranslate"><span class="pre">Y</span></code>の行列積を計算するには，<code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">&#64;</span> <span class="pre">Y</span></code>と書きます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}, Y=\begin{bmatrix}5 &amp; 6\\7 &amp; 8\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(X\)</span>と<span class="math notranslate nohighlight">\(Y\)</span>の行列積を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">@</span> <span class="n">Y</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">&#64;</span></code>による行列積計算はバージョン3.5以降のPythonで使用できます．それより前のPythonを使用する場合は，<code class="docutils literal notranslate"><span class="pre">np.matmul</span></code>関数を使用する必要があります．)</font></p>
+<p>###3-2-4. <font color="Crimson">ブロードキャスト</font></p>
+<p>行列においても，ベクトルと同様にブロードキャストを行うことができます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}\)</span> に対して，各成分の値を半分にした行列を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###3-2-5. <font color="Crimson">行列式</font></p>
+<p>行列<span class="math notranslate nohighlight">\(S\)</span> の行列式 <span class="math notranslate nohighlight">\(det(S)\)</span> を計算するには<code class="docutils literal notranslate"><span class="pre">np.linalg.det(S)</span></code> と書きます．<br />
+<span class="math notranslate nohighlight">\(S=\begin{bmatrix}a &amp; b\\c &amp; d\end{bmatrix}\)</span> の時，<span class="math notranslate nohighlight">\(det(S)\)</span> はベクトル <span class="math notranslate nohighlight">\(\begin{bmatrix}a\\c\end{bmatrix}\)</span> とベクトル <span class="math notranslate nohighlight">\(\begin{bmatrix}b\\d\end{bmatrix}\)</span> により作られる平行四辺形の符号付き面積を表します．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(S=\begin{bmatrix}3 &amp; 1\\1 &amp; 2\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(S\)</span>の行列式を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(Xの行列式は-2になりますが，<code class="docutils literal notranslate"><span class="pre">np.linalg.det(X)</span></code> の値は計算誤差により，-2ぴったりになっていないかもしれません．)</font></p>
+<p>###3-2-5. <font color="Crimson">行列の転置</font></p>
+<p>行列<code class="docutils literal notranslate"><span class="pre">P</span></code>の転置は<code class="docutils literal notranslate"><span class="pre">P.T</span></code>と書きます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(P=\begin{bmatrix}1 &amp; 2 \\3 &amp; 4 \\ 5 &amp; 6\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(P\)</span>の転置を出力する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(ここで挙げたもの以外にも行列に関する様々な計算をNumPyを使って行うことができます．詳しくは<a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">Numpy API Reference Linear algebra</a>をご覧ください．)</font></p>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">3.2. </span>3-3. <font color="Crimson">行列とベクトルの積</font><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>行列とベクトルとの行列積も <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>演算子を使って計算できます．
+この場合の計算結果はベクトルになります．</p>
+<p>NumPyのベクトルには向き（縦ベクトルや横ベクトル）の区別がないため，行列積を計算する際には最初に向きを決めないといけませんが，NumPy側でいい感じに向きを決めてくれます．</p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html#numpy-matmul">Numpy API Reference</a>によれば，行列積計算において第１項が（n要素の）ベクトルの際は，まずそれを1行n列の行列に変換してから行列積を計算するようです．同様に，第２項がベクトルの際は，まずそれをn行1列の行列に変換してから行列積を計算するようです．そして行列積計算後，行列からベクトルに変換する（次元を上げた分を元に戻す）ようです．)</font></p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(W=\begin{bmatrix}5 &amp; 2\\1 &amp; 3\end{bmatrix}\)</span>，ベクトル <span class="math notranslate nohighlight">\(z=\begin{bmatrix}2 \\1 \end{bmatrix}\)</span> に対して，行列積<span class="math notranslate nohighlight">\(Wz\)</span>と<span class="math notranslate nohighlight">\(z^T W\)</span>を計算する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">W</span> <span class="o">@</span> <span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span> <span class="o">@</span> <span class="n">W</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">3.3. </span>3-4. <font color="Crimson">逆行列と線形連立方程式</font><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>###3-4-1. <font color="Crimson">逆行列</font></p>
+<p>行列<span class="math notranslate nohighlight">\(A\)</span>に対し、<span class="math notranslate nohighlight">\(A^{-1}A = I\)</span>を満たすような行列<span class="math notranslate nohighlight">\(A^{-1}\)</span>を<span class="math notranslate nohighlight">\(A\)</span>の逆行列といいます．</p>
+<p>numpyでは<code class="docutils literal notranslate"><span class="pre">np.linalg.inv(A)</span></code>と書くことで，<span class="math notranslate nohighlight">\(A\)</span>の逆行列<span class="math notranslate nohighlight">\(A^{-1}\)</span>を計算できます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(A=\begin{bmatrix}2 &amp; 5\\1 &amp; 3\end{bmatrix}\)</span> の逆行列を求める．（逆行列は<span class="math notranslate nohighlight">\(\frac{1}{2\cdot 3 - 5\cdot 1}\begin{bmatrix}3 &amp; -5\\-1 &amp; 2\end{bmatrix} = \begin{bmatrix}3 &amp; -5\\-1 &amp; 2\end{bmatrix}\)</span>となる．）</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###3-4-2. <font color="Crimson">線形連立方程式の解法</font></p>
+<p>逆行列を求めることにより，線形連立方程式の解を計算することができます．</p>
+<p>例として下記のような<span class="math notranslate nohighlight">\(x,y\)</span>を変数とする連立方程式を考えます．</p>
+<div class="amsmath math notranslate nohighlight" id="equation-84140a4f-aed6-4c79-8650-b40f1caa0e75">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-84140a4f-aed6-4c79-8650-b40f1caa0e75" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+  a_{00} x + a_{01}y &amp; = &amp; b_0 \\
+  a_{10} x + a_{11}y&amp; = &amp; b_1
+\end{eqnarray}\]</div>
+<p>上記の連立方程式は以下のように記述できます．
+$<span class="math notranslate nohighlight">\(\begin{bmatrix}a_{00} &amp; a_{01}\\a_{10} &amp; a_{11}\end{bmatrix}\begin{bmatrix}x\\ y\end{bmatrix} = \begin{bmatrix}b_0\\ b_1\end{bmatrix}\)</span>$</p>
+<p>この時，<span class="math notranslate nohighlight">\(A = \begin{bmatrix}a_{00} &amp; a_{01}\\a_{10} &amp; a_{11}\end{bmatrix}\)</span>，
+<span class="math notranslate nohighlight">\(B=\begin{bmatrix}b_0\\ b_1\end{bmatrix}\)</span>とおくと，
+<span class="math notranslate nohighlight">\(A \begin{bmatrix}x\\ y\end{bmatrix} = B\)</span>
+となりますので，<br />
+これに左から<span class="math notranslate nohighlight">\(A^{-1}\)</span>をかけることで，
+$<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} = A^{-1}B\)</span>$
+となり連立方程式の解を求めることができます．</p>
+<p><font color="blue">【実習】 以下の連立方程式の解を求める．</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b2068671-ddec-4bc6-a69f-3e986276e015">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-b2068671-ddec-4bc6-a69f-3e986276e015" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+  2 x + 5y &amp; = &amp; 3 \\
+    x + 3y&amp; = &amp; 2
+\end{eqnarray}\]</div>
+</font><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">@</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2><span class="section-number">3.4. </span>3-5. <font color="Crimson">要素の確認と変更</font><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>行列Xの要素にアクセスするには<code class="docutils literal notranslate"><span class="pre">X[</span> <span class="pre">]</span></code>の中にカンマ区切りで行と列を指定します．</p>
+<p>インデックスが0始まりであることに気をつけましょう．
+行列<code class="docutils literal notranslate"><span class="pre">X</span></code> の左上の要素は <code class="docutils literal notranslate"><span class="pre">X[0,0]</span></code> です．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(Q=\begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span> の 0行1列の要素にアクセスする</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>行と列のそれぞれに対してスライスを使って範囲を指定することができます．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(Q=\begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span> の すべての行の先頭2列の要素にアクセスする
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(スライス <code class="docutils literal notranslate"><span class="pre">:</span></code> の左側の数字を省略すると，最初からという意味になり，右側の数字を省略すると，最後までという意味になることを思い出しましょう．)</font></p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(Q=\begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span> の index 1の行をベクトルとして取り出す．
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="mi">1</span><span class="p">,:])</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(行列<code class="docutils literal notranslate"><span class="pre">Q</span></code> の要素にアクセスする際，行と列の両方にインデックス値を指定すると，スカラー値が返ってきます．一方，行と列の両方にスライスを指定した場合は，行列(２次元配列)が返ってきます．また，行と列の片方をインデックス値，もう片方をスライスにすると，ベクトル（１次元配列）が返ってきます．)</font></p>
+<p>値を代入する処理も，ベクトルと同様に行えます．
+複数の値を同時に代入することが可能です．</p>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(Q=\begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span> の index 1の行の値を34, 35, 36 に変更する．
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">Q</span><span class="p">[</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(Q=\begin{bmatrix}1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span> を行列 <span class="math notranslate nohighlight">\(R\)</span> にコピーする．
+</font></p>
+<p>行列をコピーする処理もベクトルと同様に<code class="docutils literal notranslate"><span class="pre">np.copy()</span></code>関数を用いて行います．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="c1">#R = Q # Wrong</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+<span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="id14">
+<h1><span class="section-number">4. </span>4. <font color="Crimson">ベクトル・行列の生成</font><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id15">
+<h2><span class="section-number">4.1. </span>4-1. <font color="Crimson">ゼロ行列</font><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>要素がすべて0のベクトルを作るには，<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html"><code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> 関数</a>にベクトルの要素数を渡します．</p>
+<p><font color="blue">【実習】 要素数4のゼロベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>要素数がすべて0の行列を作るには，<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> 関数に行列の <code class="docutils literal notranslate"><span class="pre">shape</span></code>（行と列の要素数を表すタプル）を渡します．タプルのカッコは省略できませんので注意しましょう．</p>
+<p><font color="blue">【実習】 3行2列のゼロ行列を生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>デフォルトでは，各要素は浮動小数点(float)型になります．
+それ以外の型にするには，<code class="docutils literal notranslate"><span class="pre">dtype</span></code> を指定します．</p>
+<p><font color="blue">【実習】 3行2列の整数型のゼロ行列を生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">dtype</span></code>に指定可能な値については，<a class="reference external" href="https://numpy.org/doc/stable/user/basics.types.html?highlight=dtype">NumPy User Guide Data types</a>をご覧ください．基本的には，<code class="docutils literal notranslate"><span class="pre">np.int64</span></code>のように<code class="docutils literal notranslate"><span class="pre">np</span></code> をつけて指定しますが，ユーザガイドによれば，<code class="docutils literal notranslate"><span class="pre">int</span></code>，<code class="docutils literal notranslate"><span class="pre">bool</span></code>，<code class="docutils literal notranslate"><span class="pre">float</span></code>，<code class="docutils literal notranslate"><span class="pre">complex</span></code>については<code class="docutils literal notranslate"><span class="pre">np</span></code>を付けずに指定可能です．これらはそれぞれ<code class="docutils literal notranslate"><span class="pre">np.int_</span></code>，<code class="docutils literal notranslate"><span class="pre">np.bool_</span></code>，<code class="docutils literal notranslate"><span class="pre">np.float_</span></code>，<code class="docutils literal notranslate"><span class="pre">np.complex_</span></code>に変換されます．)</font></p>
+<p>すべての要素が1の行列を作るには<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>の代わりに<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html"><code class="docutils literal notranslate"><span class="pre">np.ones()</span></code></a>を使います．</p>
+<p><font color="blue">【実習】 すべての要素の値が1であるような2行2列の行列を作成する．
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2><span class="section-number">4.2. </span>4-2. <font color="Crimson">単位行列</font><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>単位行列（対角成分が1それ以外が0の正方行列）を作るには<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.identity.html"><code class="docutils literal notranslate"><span class="pre">np.identity()</span></code>関数</a>に単位行列の行数を渡します．<code class="docutils literal notranslate"><span class="pre">dtype</span></code> については<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>と同じ仕様です．</p>
+<p><font color="blue">【実習】 3行3列の単位行列を作成する．
+</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2><span class="section-number">4.3. </span>4-3. <font color="Crimson">一定間隔で値を並べたベクトル</font><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>###4-3-1. <font color="Crimson">整数の連続値</font></p>
+<p>Pythonのfor文で使用する<a class="reference external" href="https://docs.python.org/ja/3/library/stdtypes.html#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a>と同様の仕様で，ベクトルを生成する関数として，<code class="docutils literal notranslate"><span class="pre">np.arange()</span></code>があります．</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange(n,m)</span></code> と書くと<code class="docutils literal notranslate"><span class="pre">n</span></code> 以上 <code class="docutils literal notranslate"><span class="pre">m</span></code> 未満の連続した整数値からなるベクトルが生成されます．</p>
+<p><font color="blue">【実習】 3以上8未満の連続した整数値からなるベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">arange</span></code>のつづりは英語の arrange とは異なりますので，注意しましょう．)</font></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange(n,m)</span></code> において先頭の数字<code class="docutils literal notranslate"><span class="pre">n</span></code>を省略し，<code class="docutils literal notranslate"><span class="pre">np.arange(m)</span></code> と書くと，<code class="docutils literal notranslate"><span class="pre">0</span></code> 以上 <code class="docutils literal notranslate"><span class="pre">m</span></code> 未満の連続した整数値からなるベクトルが生成されます．</p>
+<p><font color="blue">【実習】 0以上8未満の連続した整数値からなるベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range</span></code>と同様に一定間隔ごとに値を並べたベクトルを生成することもできます．</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange(n,m,s)</span></code> と書くと<code class="docutils literal notranslate"><span class="pre">n</span></code> 以上 <code class="docutils literal notranslate"><span class="pre">m</span></code> 未満のの整数を間隔 <code class="docutils literal notranslate"><span class="pre">s</span></code> で取り出したベクトルが生成されます．</p>
+<p><font color="blue">【実習】 0以上8未満の偶数値からなるベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###4-3-2. <font color="Crimson">浮動小数点数を一定間隔で並べる</font></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> では，開始，終了の数値や間隔を浮動小数点数にすることができます．</p>
+<p><font color="blue">【実習】 -2.0以上，3.0未満の数値を0.1間隔で取り出したベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>このようなベクトルは関数のグラフを描画する際によく使います．
+関数 <span class="math notranslate nohighlight">\(f(x)\)</span> の描画は，<span class="math notranslate nohighlight">\(x\)</span> のそれぞれの値での <span class="math notranslate nohighlight">\(f(x)\)</span> の値を計算することにより行えます．</p>
+<p><font color="blue">【実習】 <span class="math notranslate nohighlight">\(f(x) = x^3 - x^2 - 2x\)</span> を -2.0 以上，3.0 未満の範囲で描画する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(ブロードキャストのおかげで，各<span class="math notranslate nohighlight">\(x\)</span>での<span class="math notranslate nohighlight">\(f(x)\)</span>の値を簡単に計算することができます．描画にはmatplotlibを使用しています．<code class="docutils literal notranslate"><span class="pre">plot()</span></code>が描画処理で<code class="docutils literal notranslate"><span class="pre">show()</span></code>が画面に描画したものを表示する処理です．)</font></p>
+<p>###4-3-3. <font color="Crimson">指定範囲を指定数で等分する</font></p>
+<p>等間隔で値を並べたベクトルを作る際，間隔を指定するのではなく，範囲と生成されるデータ数を指定することもできます．その場合には，<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html"><code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code>関数</a>使用します．<code class="docutils literal notranslate"><span class="pre">np.linspace(p,q,n)</span></code> と書くと，<code class="docutils literal notranslate"><span class="pre">p</span></code>から<code class="docutils literal notranslate"><span class="pre">q</span></code>までの範囲を<code class="docutils literal notranslate"><span class="pre">n</span></code>等分してベクトルを生成します．</p>
+<p><font color="blue">【実習】 <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> を利用して，<span class="math notranslate nohighlight">\(f(x) = x^3 - x^2 - 2x\)</span> を -2.0 以上，3.0 未満の範囲で描画する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> 関数のデフォルト設定では，終了位置の値もベクトルに含まれるようになっています．)</font></p>
+</div>
+<div class="section" id="id18">
+<h2><span class="section-number">4.4. </span>4-4. <font color="Crimson">ランダムな値を持つ行列</font><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>NumPyでは2019年7月にリリースされたver1.17.0から乱数の生成方式が変更になりました．
+旧方式で乱数を生成する際はRandomStateと呼ばれるクラスを使用しますが，新方式で乱数を生成する際はGeneratorと呼ばれるクラスを使用します．</p>
+<p>ここでは新方式を使う方法について説明します．
+新方式の詳細については<a class="reference external" href="https://numpy.org/doc/stable/reference/random/index.html">NumPy API Reference Random sampling</a>をご覧ください．</p>
+<p>###4-4-1. <font color="Crimson">乱数生成器の作成とランダムな整数値</font></p>
+<p>乱数を生成する際は，まず，乱数生成器（Random Number Generator）を作ります．<br />
+<code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng(12345)</span></code>のように書くと <code class="docutils literal notranslate"><span class="pre">rng</span></code> という生成器が作られます．
+以降では，<code class="docutils literal notranslate"><span class="pre">rng</span></code>という名前の生成器を使う前提で説明します．</p>
+<p>上記において，12345の部分は乱数のシード（種）と呼ばれるもので，これを指定することで，毎回同じ乱数列が生成されるようになります．他の数字を指定することで，異なる乱数列が生成されるようになります．
+シードを指定しない場合は，引数をなしにします．
+詳細は<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generator.html#numpy.random.default_rng">乱数生成器のAPI Reference</a>をご覧ください．</p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(再現性（後で実行しても同じ結果を得られる）が必要な場合は，シードを指定する必要があります．
+開発や実験の際は，再現性がある方が望ましいことが多いと思います．)</font></p>
+<p>乱数生成器から整数の乱数値を得るには，<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.integers.html#numpy.random.Generator.integers"><code class="docutils literal notranslate"><span class="pre">rng.integers()</span></code>関数</a>を使います．</p>
+<p><code class="docutils literal notranslate"><span class="pre">rng.integers(a,</span> <span class="pre">b)</span></code>のように書くと，a以上，b未満の整数乱数値を一つ得ることができます．</p>
+<p><font color="blue">【実習】 0以上10未満の整数乱数を一つ生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>整数乱数値を持つベクトルを生成するには，<code class="docutils literal notranslate"><span class="pre">rng.integers(a,</span> <span class="pre">b,</span> <span class="pre">size=n)</span></code>のようにベクトルの要素数<code class="docutils literal notranslate"><span class="pre">n</span></code>を指定します．</p>
+<p><font color="blue">【実習】 0以上10未満の整数乱数5個からなるベクトルを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>整数乱数値を持つ行列を生成するには，<code class="docutils literal notranslate"><span class="pre">rng.integers()</span></code>の<code class="docutils literal notranslate"><span class="pre">size</span></code> パラメータに行列のshape（行と列の数）を指定します</p>
+<p><font color="blue">【実習】 0以上10未満の整数乱数値を持つ2行3列の行列を生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###4-4-2. <font color="Crimson">ベクトルの値のシャッフル</font></p>
+<p>ベクトルの値について，要素間でシャッフルしたい場合は，<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.shuffle.html#numpy.random.Generator.shuffle"><code class="docutils literal notranslate"><span class="pre">rng.shuffle()</span></code>関数</a>を使います．</p>
+<p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">10]</span></code>の値をベクトル内でシャッフルする．）</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###4-4-3. <font color="Crimson">浮動小数点数の乱数</font></p>
+<p>乱数生成器から浮動小数点数の乱数値を得るには，<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.uniform.html#numpy.random.Generator.uniform"><code class="docutils literal notranslate"><span class="pre">rng.uniform()</span></code>関数</a>を使います．</p>
+<p><code class="docutils literal notranslate"><span class="pre">rng.uniform(a,</span> <span class="pre">b,</span> <span class="pre">size=(n,m))</span></code> と書くと，<code class="docutils literal notranslate"><span class="pre">a</span></code> 以上<code class="docutils literal notranslate"><span class="pre">b</span></code> 未満の浮動小数点数が一様分布から生成され，n行m列の行列が作られます（<code class="docutils literal notranslate"><span class="pre">a</span></code>以上 <code class="docutils literal notranslate"><span class="pre">b</span></code> 未満のどの値も等確率で生成されます）．</p>
+<p><code class="docutils literal notranslate"><span class="pre">rng.integers()</span></code>と同様に，<code class="docutils literal notranslate"><span class="pre">size</span></code>を指定しないと一つの乱数値が生成され，<code class="docutils literal notranslate"><span class="pre">size</span></code> に整数値を指定すると，その要素数のベクトルが生成されます．</p>
+<p><font color="blue">【実習】 80以上100未満の浮動小数点数の乱数値を持つ2行3列の行列を生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p>###4-4-4. <font color="Crimson">正規分布から得られる乱数</font></p>
+<p>正規分布から生成される乱数値を得るには，<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.normal.html#numpy.random.Generator.normal"><code class="docutils literal notranslate"><span class="pre">rng.normal()</span></code>関数</a>を使います．</p>
+<p><code class="docutils literal notranslate"><span class="pre">rng.normal(u,</span> <span class="pre">s,</span> <span class="pre">size=(n,m))</span></code> と書くと，平均値 <code class="docutils literal notranslate"><span class="pre">u</span></code>，標準偏差<code class="docutils literal notranslate"><span class="pre">s</span></code> の正規分布から乱数が生成され，n行m列の行列が作られます．</p>
+<p><code class="docutils literal notranslate"><span class="pre">size</span></code>については，他と同様の仕様です．</p>
+<p><font color="blue">【実習】 ある試験の得点分布が平均値80，標準偏差10の正規分布に従うと仮定して，40人の結果のサンプルをベクトルデータとして取得する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(NumPyでは様々な分布から乱数を取得することができます．詳細は<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generator.html#distributions">NumPy API Reference Random GeneratorのDistributions</a>を参照してください．)</font></p>
+<p>##4-5. <font color="Crimson">行列の変形</font></p>
+<p>行列の要素数を変えないまま，行と列の数を変更したり，ベクトルと行列の変換をしたりできます．
+そのためには，ベクトルや行列（ndarray型のインスタンス）に対して，<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.reshape.html#numpy.ndarray.reshape"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>メソッド</a>を呼びます．</p>
+<p><code class="docutils literal notranslate"><span class="pre">d</span></code>要素からなるベクトル<code class="docutils literal notranslate"><span class="pre">v</span></code>に対して，<code class="docutils literal notranslate"><span class="pre">v.reshape(n,m)</span></code>と書くと，<code class="docutils literal notranslate"><span class="pre">v</span></code>を<code class="docutils literal notranslate"><span class="pre">n</span></code>行<code class="docutils literal notranslate"><span class="pre">m</span></code>列に変換した行列が生成されます（<code class="docutils literal notranslate"><span class="pre">v</span></code>は変更されません）．</p>
+<p>一方，<code class="docutils literal notranslate"><span class="pre">reshape(n)</span></code>のように引数を一つにすると，ベクトルに変換されます．</p>
+<p><font color="blue">【実習】 ベクトル <span class="math notranslate nohighlight">\(w=\begin{bmatrix}0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \end{bmatrix}\)</span> を変形して，行列 <span class="math notranslate nohighlight">\(W=\begin{bmatrix}0 &amp; 1 &amp; 2 \\ 3 &amp; 4 &amp; 5 \end{bmatrix}\)</span> を生成する</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.reshape.html#numpy.ndarray.reshape"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>メソッドの引数の仕様</a>を見ると，変形後の形<code class="docutils literal notranslate"><span class="pre">shape</span></code>は一つの数値かタプルで指定されることになっているため，上記の変形処理は<code class="docutils literal notranslate"><span class="pre">w.reshape((2,3))</span></code>と引数をタプルにして呼ぶのが正しいように思われます．しかし，実はこのメソッドでは，タプルでなく，個別の引数として行列の形を指定することが<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.reshape.html#numpy.ndarray.reshape">許されています</a>．つまり，<code class="docutils literal notranslate"><span class="pre">w.reshape((2,3))</span></code>のような2重カッコを使った書き方でなく，<code class="docutils literal notranslate"><span class="pre">w.reshape(2,3)</span></code>と書くことができます．)</font></p>
+<p><font color="orangered">(9｀･ω･)9 ｡oO</font><font color="teal">(以上で NumPy についての実習は終わりです．お疲れ様でした．)</font></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">はじめに</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="data-analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Pythonによるデータ解析と可視化</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      <div class="extra_footer">
+        <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img style="0;margin-bottom:0.2em;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a> © Copyright 2022 Graduate School of Information Sciences, Tohoku University．
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
