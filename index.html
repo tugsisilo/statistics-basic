@@ -90,30 +90,52 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  講義
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="notebook/python.html">
    1. プログラミングの基本操作
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebook/numpy.html">
+  <a class="reference internal" href="notebook/numpy-01.html">
    2. 基本統計処理
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="notebook/numpy-02.html">
+   3. 線形代数の基本計算
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="notebook/pandas.html">
-   3. 多変量データ解析
+   4. 多変量データ解析
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebook/matplotlib.html">
-   4. データ可視化
+   5. データ可視化
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebook/scikit-learn.html">
-   5. 回帰と分類
+   6. 線形回帰分析
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  付録
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook/worksheet.html">
+   演習問題
   </a>
  </li>
 </ul>
@@ -315,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference external" href="https://scikit-learn.org/"><img alt="made-with-scikit-learn" src="https://img.shields.io/badge/Made%20with-scikit--learn-1f425f.svg" /></a></p>
 <div class="section" id="id2">
 <h2>この教材について<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>この教材は数理・データ科学・AIの導入により地域企業を変革するDXインフルエンサの養成プログラムの講座「統計プログラミングの初歩」のメインコンテンツです．</p>
+<p>この教材は数理・データ科学・AIの導入により地域企業を変革するDXインフルエンサの養成プログラムの講座「統計プログラミングの初歩」のメインコンテンツです．利用するためには Google アカウントを持っている必要があります．</p>
 <div class="sphinx-bs docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 px-2 py-2 docutils">
@@ -324,7 +346,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="card-text"><strong>対象者</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">これから統計学についての知識を深めたい人．プログラミングの経験，機械学習，統計学に関する知識はないことを前提にしています．</p>
+<p class="card-text">これから統計学についての知識を深めたい人．プログラミングの経験や統計学に関する知識はないことを前提にしています．</p>
 </div>
 </div>
 </div>
@@ -353,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="card-text"><strong>NumPy</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text"><a class="reference external" href="https://numpy.org/">NumPy</a> は Python から呼び出せる，数値計算を行うためのライブラリです．これを利用して基本統計処理を学びます．</p>
+<p class="card-text"><a class="reference external" href="https://numpy.org/">NumPy</a> は Python から呼び出せる，数値計算を行うためのライブラリです．これを利用して基本統計処理や行列計算を学びます．</p>
 </div>
 </div>
 </div>
@@ -383,7 +405,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="card-text"><strong>scikit-learn</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text"><a class="reference external" href="https://scikit-learn.org/">scikit-learn</a> は機械学習法を実現するためのライブラリです．この講座では回帰分析やデータの分類をするために利用します．</p>
+<p class="card-text"><a class="reference external" href="https://scikit-learn.org/">scikit-learn</a> は機械学習法を実現するためのライブラリです．この講座では線形回帰をするために利用します．</p>
 </div>
 </div>
 </div>
@@ -423,6 +445,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>進め方<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>上から順番に読み進めます．Python のコードが書かれていますので，それをコードセルに入力して実行します．コード内の値を変えたり，関数を変えたりして挙動を確かめてみてください．</p>
 </div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>

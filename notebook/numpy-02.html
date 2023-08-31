@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>基本統計処理 &#8212; 統計プログラミングの初歩</title>
+    <title>3. 線形代数の基本計算 &#8212; 統計プログラミングの初歩</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. 多変量データ解析" href="pandas.html" />
+    <link rel="prev" title="2. 基本統計処理" href="numpy-01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
   講義
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
    1. プログラミングの基本操作
@@ -107,8 +109,8 @@ const thebe_selector_output = ".output, .cell_output"
    2. 基本統計処理
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="numpy-02.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    3. 線形代数の基本計算
   </a>
  </li>
@@ -180,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebook/numpy.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebook/numpy-02.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -220,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/tugsisilo/statistics-basic/blob/main/notebook/numpy.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/tugsisilo/statistics-basic/blob/main/notebook/numpy-02.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -241,133 +243,133 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   はじめに
+   3.1. はじめに
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     開始前に行うこと（重要）
+     3.1.1. 開始前に行うこと（重要）
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     到達目標
+     3.1.2. 到達目標
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy">
-     NumPy とは
+     3.1.3. NumPy とは
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     NumPy のインポート
+     3.1.4. NumPy のインポート
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     学習の進め方
+     3.1.5. 学習の進め方
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   ベクトルの基本操作
+   3.2. ベクトルの基本操作
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     ベクトルの生成
+     3.2.1. ベクトルの生成
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     ベクトルの基本演算
+     3.2.2. ベクトルの基本演算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     ブロードキャスト
+     3.2.3. ブロードキャスト
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     算術関数
+     3.2.4. 算術関数
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     要素の確認と変更
+     3.2.5. 要素の確認と変更
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
-     ベクトルのコピー
+     3.2.6. ベクトルのコピー
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id14">
-   行列の基本操作
+   3.3. 行列の基本操作
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id15">
-     行列の生成
+     3.3.1. 行列の生成
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id16">
-     行列に対する基本演算
+     3.3.2. 行列に対する基本演算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id17">
-     行列とベクトルの積
+     3.3.3. 行列とベクトルの積
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id18">
-     逆行列と線形連立方程式
+     3.3.4. 逆行列と線形連立方程式
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
-     要素の確認と変更
+     3.3.5. 要素の確認と変更
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id20">
-   応用的な操作や変形
+   3.4. 応用的な操作や変形
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id21">
-     ゼロ行列
+     3.4.1. ゼロ行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id22">
-     単位行列
+     3.4.2. 単位行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id23">
-     値を並べたベクトル
+     3.4.3. 値を並べたベクトル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id24">
-     ランダムな値を持つ行列
+     3.4.4. ランダムな値を持つ行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id25">
-     行列の変形
+     3.4.5. 行列の変形
     </a>
    </li>
   </ul>
@@ -382,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>基本統計処理</h1>
+                <h1>線形代数の基本計算</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,133 +396,133 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   はじめに
+   3.1. はじめに
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     開始前に行うこと（重要）
+     3.1.1. 開始前に行うこと（重要）
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     到達目標
+     3.1.2. 到達目標
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#numpy">
-     NumPy とは
+     3.1.3. NumPy とは
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     NumPy のインポート
+     3.1.4. NumPy のインポート
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     学習の進め方
+     3.1.5. 学習の進め方
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   ベクトルの基本操作
+   3.2. ベクトルの基本操作
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     ベクトルの生成
+     3.2.1. ベクトルの生成
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     ベクトルの基本演算
+     3.2.2. ベクトルの基本演算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id10">
-     ブロードキャスト
+     3.2.3. ブロードキャスト
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id11">
-     算術関数
+     3.2.4. 算術関数
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id12">
-     要素の確認と変更
+     3.2.5. 要素の確認と変更
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
-     ベクトルのコピー
+     3.2.6. ベクトルのコピー
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id14">
-   行列の基本操作
+   3.3. 行列の基本操作
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id15">
-     行列の生成
+     3.3.1. 行列の生成
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id16">
-     行列に対する基本演算
+     3.3.2. 行列に対する基本演算
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id17">
-     行列とベクトルの積
+     3.3.3. 行列とベクトルの積
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id18">
-     逆行列と線形連立方程式
+     3.3.4. 逆行列と線形連立方程式
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id19">
-     要素の確認と変更
+     3.3.5. 要素の確認と変更
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id20">
-   応用的な操作や変形
+   3.4. 応用的な操作や変形
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id21">
-     ゼロ行列
+     3.4.1. ゼロ行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id22">
-     単位行列
+     3.4.2. 単位行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id23">
-     値を並べたベクトル
+     3.4.3. 値を並べたベクトル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id24">
-     ランダムな値を持つ行列
+     3.4.4. ランダムな値を持つ行列
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id25">
-     行列の変形
+     3.4.5. 行列の変形
     </a>
    </li>
   </ul>
@@ -535,11 +537,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>基本統計処理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>線形代数の基本計算<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
-<h3>開始前に行うこと（重要）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>開始前に行うこと（重要）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>まず，Chrome 等のブラウザを利用して，本教材の URL にアクセスし，画面の指示に従い Google アカウントにログインしてください．その後，ブラウザ表示画面左上の「ファイル」をクリックし，さらにポップアップで出てくる項目から「ドライブにコピーを保存」をクリックしてください．これにより，本教材のコピーが自分のGoogleドライブに保存され，自分で書いたプログラムを実行できるようになります．</p>
 <p>また，多くのセルが非表示になっていると思われるため，同じくブラウザ表示画面上の「表示」をクリックし，さらにその項目から「セクションを展開」をクリックし，非表示のセルを表示させてください．</p>
 <div class="admonition hint">
@@ -548,15 +550,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id4">
-<h3>到達目標<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>NumPy を利用して基本的な統計処理ができるようになること目標とします．</p>
+<h3><span class="section-number">3.1.2. </span>到達目標<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>NumPy を利用して複雑な行列計算ができるようになること目標とします．</p>
 </div>
 <div class="section" id="numpy">
-<h3>NumPy とは<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.3. </span>NumPy とは<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h3>
 <p>NumPy は，Python で科学技術などを行う際に使用する基本的なライブラリです．ベクトルや行列を扱えるほか，線形代数や統計の基本処理や離散フーリエ変換を行うこともできます．C言語でコンパイルされているため，C言語並みに高速に動作します．使い方の概要や詳細については，<a class="reference external" href="https://numpy.org/doc/stable/user/index.html">NumPyユーザーガイド</a>をご覧ください．</p>
 </div>
 <div class="section" id="id5">
-<h3>NumPy のインポート<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.4. </span>NumPy のインポート<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>NumPy は以下のようにインポートします．NumPy には np という略称を与えて利用するのが普通です．その都度 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> とタイピングするのが面倒だからです．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,15 +569,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id6">
-<h3>学習の進め方<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.5. </span>学習の進め方<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>上から順に読み進み，<font color="blue">【実習】</font>と書いてある箇所でコードを書いて実行してください．基本的に入力するコードの前に見本のコードが書かれており，見本と同じコードを書けば正しく動作するようになっています（見本コードの上下に入っている区切り線は入力する必要ありません）．理解を深めるには，見本とは異なるコードを書いて試してみることも役立つと思います．
 なお， Colab では，コードが書かれている領域をコードセル，説明文等が書かれている領域をテキストセルといいます．</p>
 </div>
 </div>
 <div class="section" id="id7">
-<h2>ベクトルの基本操作<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>ベクトルの基本操作<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id8">
-<h3>ベクトルの生成<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>ベクトルの生成<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>NumPy の ndarray クラスを用いてベクトルを生成するには NumPy の array 関数にリストを渡します．</p>
 <p><font color="blue">【実習】ベクトル <code class="docutils literal notranslate"><span class="pre">x=[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> を生成する</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -608,7 +610,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id9">
-<h3>ベクトルの基本演算<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>ベクトルの基本演算<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>ベクトル <code class="docutils literal notranslate"><span class="pre">x,y</span></code> の足し算は<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>，引き算は<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> とすれば計算できます．</p>
 <p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x=[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> と<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3]</span></code> に対して， <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>と<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> を計算する．</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -649,7 +651,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id10">
-<h3>ブロードキャスト<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>ブロードキャスト<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>ベクトルにスカラーをかけると，ベクトルの各要素にスカラー値が掛け算されます．このようにある演算をベクトル（や行列）の全要素に適用することをブロードキャストといいます．NumPyでは，乗算だけでなく，除算，加算，減算，べき乗などもブロードキャストできます．</p>
 <p><font color="blue">【実習】 ブロードキャストを利用してベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>の各要素を2倍する</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -674,7 +676,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id11">
-<h3>算術関数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.4. </span>算術関数<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>NumPyの算術関数をベクトルに適用すると，基本的には要素ごとに計算します．</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code>: eのべき乗</p></li>
@@ -693,7 +695,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id12">
-<h3>要素の確認と変更<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.5. </span>要素の確認と変更<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>リストと同様の書き方でベクトルの要素にアクセスできます．</p>
 <p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の2番目（index 1）の要素にアクセスする．</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -733,7 +735,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id13">
-<h3>ベクトルのコピー<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.6. </span>ベクトルのコピー<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>ベクトル<code class="docutils literal notranslate"><span class="pre">x</span></code>をベクトル<code class="docutils literal notranslate"><span class="pre">y</span></code>にコピーする際は，<code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.copy(x)</span></code> と書きます．
 決して <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x</span></code> と書いてはいけません．</p>
 <p><font color="blue">【実習】 ベクトル <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[6</span> <span class="pre">7</span> <span class="pre">8]</span></code> の値をベクトル <code class="docutils literal notranslate"><span class="pre">y</span></code> にコピーする．</font></p>
@@ -755,9 +757,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id14">
-<h2>行列の基本操作<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>行列の基本操作<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id15">
-<h3>行列の生成<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.1. </span>行列の生成<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>NumPy の ndarray クラスを用いて行列を生成するには NumPy の array 関数に２次元リストを渡します．</p>
 <p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}\)</span> を生成する
 </font></p>
@@ -782,7 +784,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id16">
-<h3>行列に対する基本演算<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.2. </span>行列に対する基本演算<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>行列に対する加減乗除は同じ位置の成分同士に対して行われます．</p>
 <p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(X=\begin{bmatrix}1 &amp; 2\\3 &amp; 4\end{bmatrix}, Y=\begin{bmatrix}5 &amp; 6\\7 &amp; 8\end{bmatrix}\)</span> に対して，<span class="math notranslate nohighlight">\(X+Y\)</span>を計算する</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -857,7 +859,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id17">
-<h3>行列とベクトルの積<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.3. </span>行列とベクトルの積<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <p>行列とベクトルとの行列積も <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>演算子を使って計算できます．この場合の計算結果はベクトルになります．NumPyのベクトルには向き（縦ベクトルや横ベクトル）の区別がないため，行列積を計算する際には最初に向きを決めないといけませんが，NumPy側でいい感じに向きを決めてくれます．</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -877,7 +879,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id18">
-<h3>逆行列と線形連立方程式<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.4. </span>逆行列と線形連立方程式<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>行列<span class="math notranslate nohighlight">\(A\)</span>に対し、<span class="math notranslate nohighlight">\(A^{-1}A = I\)</span>を満たすような行列<span class="math notranslate nohighlight">\(A^{-1}\)</span>を<span class="math notranslate nohighlight">\(A\)</span>の逆行列といいます．</p>
 <p>NumPyでは<code class="docutils literal notranslate"><span class="pre">np.linalg.inv(A)</span></code>と書くことで，<span class="math notranslate nohighlight">\(A\)</span>の逆行列<span class="math notranslate nohighlight">\(A^{-1}\)</span>を計算できます．</p>
 <p><font color="blue">【実習】 行列 <span class="math notranslate nohighlight">\(A=\begin{bmatrix}2 &amp; 5\\1 &amp; 3\end{bmatrix}\)</span> の逆行列を求める．（逆行列は<span class="math notranslate nohighlight">\(\frac{1}{2\cdot 3 - 5\cdot 1}\begin{bmatrix}3 &amp; -5\\-1 &amp; 2\end{bmatrix} = \begin{bmatrix}3 &amp; -5\\-1 &amp; 2\end{bmatrix}\)</span>となる．）</font></p>
@@ -891,8 +893,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>逆行列を求めることにより，線形連立方程式の解を計算することができます．</p>
 <p>例として下記のような<span class="math notranslate nohighlight">\(x,y\)</span>を変数とする連立方程式を考えます．</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34b6a33f-2289-426e-b672-1b6a815d7f72">
-<span class="eqno">()<a class="headerlink" href="#equation-34b6a33f-2289-426e-b672-1b6a815d7f72" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-b9fb410d-6a58-4111-80f3-3b594689ebc5">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-b9fb410d-6a58-4111-80f3-3b594689ebc5" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
   a_{00} x + a_{01}y &amp; = &amp; b_0 \\
   a_{10} x + a_{11}y&amp; = &amp; b_1
 \end{eqnarray}\]</div>
@@ -906,8 +908,8 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}a_{00} &amp; a_{01}
 $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} = A^{-1}B\)</span>$
 となり連立方程式の解を求めることができます．</p>
 <p><font color="blue">【実習】 以下の連立方程式の解を求める．</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ccfd14fd-5655-4cc1-9059-50b98b848daf">
-<span class="eqno">()<a class="headerlink" href="#equation-ccfd14fd-5655-4cc1-9059-50b98b848daf" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-e2880af6-0aeb-49f9-8ade-01d0ae15b265">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-e2880af6-0aeb-49f9-8ade-01d0ae15b265" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
   2 x + 5y &amp; = &amp; 3 \\
     x + 3y&amp; = &amp; 2
 \end{eqnarray}\]</div>
@@ -920,7 +922,7 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id19">
-<h3>要素の確認と変更<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.5. </span>要素の確認と変更<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <p>行列Xの要素にアクセスするには<code class="docutils literal notranslate"><span class="pre">X[</span> <span class="pre">]</span></code>の中にカンマ区切りで行と列を指定します．</p>
 <p>インデックスが0始まりであることに気をつけましょう．
 行列<code class="docutils literal notranslate"><span class="pre">X</span></code> の左上の要素は <code class="docutils literal notranslate"><span class="pre">X[0,0]</span></code> です．</p>
@@ -981,9 +983,9 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id20">
-<h2>応用的な操作や変形<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>応用的な操作や変形<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id21">
-<h3>ゼロ行列<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.1. </span>ゼロ行列<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <p>要素がすべて0のベクトルを作るには，<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html"><code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> 関数</a>にベクトルの要素数を渡します．</p>
 <p><font color="blue">【実習】 要素数4のゼロベクトルを生成する．</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
@@ -1026,7 +1028,7 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id22">
-<h3>単位行列<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2. </span>単位行列<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <p>単位行列（対角成分が1それ以外が0の正方行列）を作るには<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.identity.html"><code class="docutils literal notranslate"><span class="pre">np.identity()</span></code>関数</a>に単位行列の行数を渡します．<code class="docutils literal notranslate"><span class="pre">dtype</span></code> については<code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code>と同じ仕様です．</p>
 <p><font color="blue">【実習】 3行3列の単位行列を作成する．
 </font></p>
@@ -1040,7 +1042,7 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id23">
-<h3>値を並べたベクトル<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3. </span>値を並べたベクトル<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <p>Pythonのfor文で使用する<a class="reference external" href="https://docs.python.org/ja/3/library/stdtypes.html#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a>と同様の仕様で，ベクトルを生成する関数として，<code class="docutils literal notranslate"><span class="pre">np.arange()</span></code>があります．</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.arange(n,m)</span></code> と書くと<code class="docutils literal notranslate"><span class="pre">n</span></code> 以上 <code class="docutils literal notranslate"><span class="pre">m</span></code> 未満の連続した整数値からなるベクトルが生成されます．</p>
 <p><font color="blue">【実習】 3以上8未満の連続した整数値からなるベクトルを生成する．</font></p>
@@ -1119,7 +1121,7 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id24">
-<h3>ランダムな値を持つ行列<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.4. </span>ランダムな値を持つ行列<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>NumPyでは2019年7月にリリースされたver1.17.0から乱数の生成方式が変更になりました．
 旧方式で乱数を生成する際はRandomStateと呼ばれるクラスを使用しますが，新方式で乱数を生成する際はGeneratorと呼ばれるクラスを使用します．</p>
 <p>ここでは新方式を使う方法について説明します．
@@ -1197,7 +1199,7 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
 </div>
 </div>
 <div class="section" id="id25">
-<h3>行列の変形<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.5. </span>行列の変形<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
 <p>行列の要素数を変えないまま，行と列の数を変更したり，ベクトルと行列の変換をしたりできます．
 そのためには，ベクトルや行列（ndarray型のインスタンス）に対して，<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.reshape.html#numpy.ndarray.reshape"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>メソッド</a>を呼びます．</p>
 <p><code class="docutils literal notranslate"><span class="pre">d</span></code>要素からなるベクトル<code class="docutils literal notranslate"><span class="pre">v</span></code>に対して，<code class="docutils literal notranslate"><span class="pre">v.reshape(n,m)</span></code>と書くと，<code class="docutils literal notranslate"><span class="pre">v</span></code>を<code class="docutils literal notranslate"><span class="pre">n</span></code>行<code class="docutils literal notranslate"><span class="pre">m</span></code>列に変換した行列が生成されます（<code class="docutils literal notranslate"><span class="pre">v</span></code>は変更されません）．</p>
@@ -1248,7 +1250,21 @@ $<span class="math notranslate nohighlight">\(\begin{bmatrix}x\\ y\end{bmatrix} 
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="numpy-01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>基本統計処理</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>多変量データ解析</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. データ可視化 &#8212; 統計プログラミングの初歩</title>
+    <title>5. データ可視化 &#8212; 統計プログラミングの初歩</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. 回帰と分類" href="scikit-learn.html" />
-    <link rel="prev" title="3. 多変量データ解析" href="pandas.html" />
+    <link rel="next" title="6. 線形回帰分析" href="scikit-learn.html" />
+    <link rel="prev" title="4. 多変量データ解析" href="pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,30 +91,52 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  講義
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
    1. プログラミングの基本操作
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="numpy.html">
+  <a class="reference internal" href="numpy-01.html">
    2. 基本統計処理
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="numpy-02.html">
+   3. 線形代数の基本計算
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="pandas.html">
-   3. 多変量データ解析
+   4. 多変量データ解析
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. データ可視化
+   5. データ可視化
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="scikit-learn.html">
-   5. 回帰と分類
+   6. 線形回帰分析
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  付録
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="worksheet.html">
+   演習問題
   </a>
  </li>
 </ul>
@@ -212,6 +234,98 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   5.1. はじめに
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     5.1.1. 開始前に行うこと（重要）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     5.1.2. 到達目標
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     5.1.3. matplotlib とは
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     5.1.4. matplotlib のインポート
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     5.1.5. 学習の進め方
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5.2. matplotlib の基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     5.2.1. データの準備
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     5.2.2. 折れ線グラフ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     5.2.3. 棒グラフ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     5.2.4. ヒストグラム
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     5.2.5. 箱ひげ図
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     5.2.6. 散布図
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     5.2.7. seabornの活用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     5.2.8. ペアプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     5.2.9. 描画した図のダウンロード
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -224,6 +338,98 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   5.1. はじめに
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     5.1.1. 開始前に行うこと（重要）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     5.1.2. 到達目標
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib">
+     5.1.3. matplotlib とは
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     5.1.4. matplotlib のインポート
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     5.1.5. 学習の進め方
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   5.2. matplotlib の基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     5.2.1. データの準備
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     5.2.2. 折れ線グラフ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     5.2.3. 棒グラフ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     5.2.4. ヒストグラム
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     5.2.5. 箱ひげ図
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     5.2.6. 散布図
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seaborn">
+     5.2.7. seabornの活用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     5.2.8. ペアプロット
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     5.2.9. 描画した図のダウンロード
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -231,7 +437,328 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">4. </span>データ可視化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>データ可視化<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">5.1. </span>はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><span class="section-number">5.1.1. </span>開始前に行うこと（重要）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>まず，Chrome 等のブラウザを利用して，本教材の URL にアクセスし，画面の指示に従い Google アカウントにログインしてください．その後，ブラウザ表示画面左上の「ファイル」をクリックし，さらにポップアップで出てくる項目から「ドライブにコピーを保存」をクリックしてください．これにより，本教材のコピーが自分のGoogleドライブに保存され，自分で書いたプログラムを実行できるようになります．</p>
+<p>また，多くのセルが非表示になっていると思われるため，同じくブラウザ表示画面上の「表示」をクリックし，さらにその項目から「セクションを展開」をクリックし，非表示のセルを表示させてください．</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>各ページの上部にロケットのアイコン <i class="fa fa-rocket" aria-hidden="true"></i> があるのでこれをクリックして各ページのファイルを Google Colaboratory 上で開いて利用してください．</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">5.1.2. </span>到達目標<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>matplotlib を用いてデータの可視化ができるようになることを目標とします．</p>
+</div>
+<div class="section" id="matplotlib">
+<h3><span class="section-number">5.1.3. </span>matplotlib とは<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h3>
+<p>データの特徴を把握するために，その可視化は必要不可欠です．matplotlib は Python を使って描画ができるようになるライブラリです．しかし，書き方がやや複雑でわかりにくいため，matplotlibを簡単に使えるようにするライブラリがいくつか提供されています．例えば，<a class="reference external" href="https://pandas.pydata.org">pandas</a> や <a class="reference external" href="https://seaborn.pydata.org">seaborn</a> です．この講義では基本的に matplotlib を使いますが，必要に応じてpandasの描画機能やseabornを用います．日本語を使えるようにするのはやや面倒なので，今回は日本語は使用しません．</p>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">5.1.4. </span>matplotlib のインポート<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>matplotlib は以下のようにインポートします．matplotlib は <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> の形式で呼び出し，それには plt という略称を与えて利用するのが普通です．また，<code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> は Jupyter Notebook のようなグラフィカルな環境で描画をするために必要な記述です．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>一緒に利用するその他のライブラリもインポートしておきましょう．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">5.1.5. </span>学習の進め方<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>上から順に読み進み，<font color="blue">【実習】</font>と書いてある箇所でコードを書いて実行してください．基本的に入力するコードの前に見本のコードが書かれており，見本と同じコードを書けば正しく動作するようになっています（見本コードの上下に入っている区切り線は入力する必要ありません）．理解を深めるには，見本とは異なるコードを書いて試してみることも役立つと思います．
+なお， Colab では，コードが書かれている領域をコードセル，説明文等が書かれている領域をテキストセルといいます．</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">5.2. </span>matplotlib の基本操作<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3><span class="section-number">5.2.1. </span>データの準備<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>八戸の気象データを使用します．</p>
+<p><font color="blue">【実習】データフレームを生成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">month</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span> <span class="s2">&quot;Feb&quot;</span><span class="p">,</span> <span class="s2">&quot;Mar&quot;</span><span class="p">,</span> <span class="s2">&quot;Apr&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;Jun&quot;</span><span class="p">,</span> <span class="s2">&quot;Jul&quot;</span><span class="p">,</span> <span class="s2">&quot;Aug&quot;</span><span class="p">,</span> <span class="s2">&quot;Sep&quot;</span><span class="p">,</span> <span class="s2">&quot;Oct&quot;</span><span class="p">,</span> <span class="s2">&quot;Nov&quot;</span><span class="p">,</span> <span class="s2">&quot;Dec&quot;</span><span class="p">]</span>
+<span class="n">sunshine</span> <span class="o">=</span> <span class="p">[</span><span class="mf">141.3</span><span class="p">,</span> <span class="mf">152.5</span><span class="p">,</span> <span class="mf">180.4</span><span class="p">,</span> <span class="mf">164.1</span><span class="p">,</span> <span class="mf">179.2</span><span class="p">,</span> <span class="mf">151.9</span><span class="p">,</span> <span class="mf">166.9</span><span class="p">,</span> <span class="mf">146.6</span><span class="p">,</span> <span class="mi">147</span><span class="p">,</span> <span class="mf">184.4</span><span class="p">,</span> <span class="mf">141.1</span><span class="p">,</span> <span class="mi">124</span><span class="p">]</span>
+<span class="n">rainfall</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mf">56.5</span><span class="p">,</span> <span class="mf">86.5</span><span class="p">,</span> <span class="mf">102.5</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mf">152.5</span><span class="p">,</span> <span class="mf">239.5</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="mf">86.5</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
+<span class="n">under0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
+<span class="n">over30</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">max_temp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.3</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">22.1</span><span class="p">,</span> <span class="mf">27.4</span><span class="p">,</span> <span class="mf">30.2</span><span class="p">,</span> <span class="mf">31.6</span><span class="p">,</span> <span class="mf">33.6</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">30.7</span><span class="p">,</span> <span class="mf">25.6</span><span class="p">,</span> <span class="mf">19.6</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">]</span>
+<span class="n">min_temp</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">9.6</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">12.6</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mf">10.6</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.1</span><span class="p">]</span>
+<span class="n">hachinohe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;month&quot;</span> <span class="p">:</span> <span class="n">month</span><span class="p">,</span> <span class="s2">&quot;sunshine&quot;</span> <span class="p">:</span> <span class="n">sunshine</span><span class="p">,</span> <span class="s2">&quot;rainfall&quot;</span> <span class="p">:</span> <span class="n">rainfall</span><span class="p">,</span>
+     <span class="s2">&quot;under0&quot;</span> <span class="p">:</span> <span class="n">under0</span><span class="p">,</span> <span class="s2">&quot;over30&quot;</span> <span class="p">:</span> <span class="n">over30</span><span class="p">,</span> <span class="s2">&quot;max_temp&quot;</span> <span class="p">:</span> <span class="n">max_temp</span><span class="p">,</span> <span class="s2">&quot;min_temp&quot;</span> <span class="p">:</span> <span class="n">min_temp</span><span class="p">})</span>
+<span class="n">hachinohe</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">5.2.2. </span>折れ線グラフ<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>関数で描画したのち，<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>で表示する</p>
+<ul>
+<li><p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html"><code class="docutils literal notranslate"><span class="pre">plot()</span></code>関数のドキュメント</a></p></li>
+</ul>
+</li>
+</ul>
+<p><font color="blue">【実習】八戸の各月の最高気温をプロットする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】x軸の値をmonth列の値にする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】色々情報を付け加えてみる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Month&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Highest temperature at Hachinohe in 2018&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】最高気温と最低気温を同時にプロットする．</font></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>2つのデータを区別するためにラベルをつけます．また，<a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.legend.html"><code class="docutils literal notranslate"><span class="pre">legend()</span></code>関数</a>を呼ぶことで凡例を表示できます．</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;max temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;min temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】pandasではもう少し簡単に描画できる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">hachinohe</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">,</span> <span class="s2">&quot;min_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">5.2.3. </span>棒グラフ<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】最高気温と最低気温について棒グラフを書く．</font></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>を<code class="docutils literal notranslate"><span class="pre">bar()</span></code>に変えるだけです．<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html"><code class="docutils literal notranslate"><span class="pre">bar()</span></code>関数のドキュメント</a>．</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;max temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;min temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】pandasではもう少し簡単に描画できる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">hachinohe</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">,</span> <span class="s2">&quot;min_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">5.2.4. </span>ヒストグラム<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】最高気温に関するヒストグラムを描画する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】最高気温と最低気温のヒストグラムを同時に描画する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;max temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;min temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>最高気温のデータの一部が最低気温のデータで見えなくなっているが一応描画できています．</p>
+</div>
+<p><font color="blue">【実習】もう少し見やすくする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;max temp&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;min temp&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>以下の操作をしました．</p>
+<ul class="simple">
+<li><p>棒の色を半透明にする（alphaは透過率）</p></li>
+<li><p>最小値を-10, 最大値を40にし，5度刻みで集計する(ビンの数(集計する区分の数)を10個にする)</p></li>
+<li><p>x軸とy軸の説明を追加する</p></li>
+</ul>
+</div>
+<p><font color="blue">【実習】pandasの関数を使用してヒストグラムを作成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">hachinohe</span><span class="p">[[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">,</span> <span class="s2">&quot;min_temp&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">5.2.5. </span>箱ひげ図<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>箱ひげ図はデータの中央値と四分位点（25%, 75%）と最大値，最小値を表す図です．</p>
+<p><font color="blue">【実習】最高気温と最低気温に関して箱ひげ図を作成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">]],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;max temp&quot;</span><span class="p">,</span> <span class="s2">&quot;min temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】pandasではもう少し簡単に描画できる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">hachinohe</span><span class="p">[[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">,</span> <span class="s2">&quot;min_temp&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><span class="section-number">5.2.6. </span>散布図<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】最高気温と最低気温に関して散布図を作成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】グラフに情報を付加する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;max_temp&quot;</span><span class="p">],</span> <span class="n">hachinohe</span><span class="p">[</span><span class="s2">&quot;min_temp&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;max temp (degree)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;min temp (degree)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;max temp vs min temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】pandasではもう少し簡単に描画できる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">hachinohe</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;max_temp&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;min_temp&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="seaborn">
+<h3><span class="section-number">5.2.7. </span>seabornの活用<a class="headerlink" href="#seaborn" title="Permalink to this headline">¶</a></h3>
+<p>seabornをセットするだけで，自動で見た目を美しくしてくれます．</p>
+<p><font color="blue">【実習】searbornをセットする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>seabornには<code class="docutils literal notranslate"><span class="pre">sns</span></code>という名前をつけるのが慣習です．</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">set()</span></code> は引数で<code class="docutils literal notranslate"><span class="pre">context=&quot;talk&quot;</span></code>や<code class="docutils literal notranslate"><span class="pre">context=&quot;poster&quot;</span></code>を指定すると，フォントが大きくなります．</p>
+</div>
+<p><font color="blue">【実習】これまでに実行したグラフ描画プログラムを再実行する．</font></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>見た目が変わるはずです．</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><span class="section-number">5.2.8. </span>ペアプロット<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>ペアプロットとは複数の変数間の相関関係を可視化する際に使用される図です．ここでは，seabornを利用してペアプロットを作成します．seabornの<a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html">ペアプロット描画関数</a>は概ね以下の形式となります．<code class="docutils literal notranslate"><span class="pre">vars</span></code>を指定しないとすべての列が使用されます．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span>
+    <span class="s2">&quot;データフレーム名&quot;</span><span class="p">,</span>
+    <span class="nb">vars</span> <span class="o">=</span> <span class="s2">&quot;列名のリスト&quot;</span><span class="p">,</span>
+    <span class="n">その他オプション</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】八戸の気象データのペアプロットを作成する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】ペアプロットに回帰直線（データの傾向を表す直線）を入れる．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;reg&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><span class="section-number">5.2.9. </span>描画した図のダウンロード<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>描画した図は以下の手順を行うことでダウンロードできます．</p>
+<ol class="simple">
+<li><p>描画した図をmatplotlibの<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html">savefig()関数</a>を使って画像ファイルとして保存
+* <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>を呼ばずに<code class="docutils literal notranslate"><span class="pre">plt.savefig(&quot;ファイル名&quot;)</span></code>を呼ぶ</p></li>
+<li><p>google.colabのライブラリを使用して画像ファイルをダウンロードする</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>手動ダウンロードでよければ，グラフ表示後，画像を右クリックして画像を保存するだけで良いです．</p>
+</div>
+<p><font color="blue">【実習】八戸の気象データに対するペアプロット図をダウンロードする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">hachinohe</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;pairplot.png&quot;</span><span class="p">)</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s2">&quot;pairplot.png&quot;</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>エラーが出た場合，もう一回試すとうまくいくことがあります．</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>終わりです．</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -263,13 +790,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>多変量データ解析</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>多変量データ解析</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="scikit-learn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>回帰と分類</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>線形回帰分析</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
