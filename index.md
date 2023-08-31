@@ -8,7 +8,7 @@
 ```
 
 ## この教材について
-この教材は数理・データ科学・AIの導入により地域企業を変革するDXインフルエンサの養成プログラムの講座**統計プログラミングの初歩**のメインコンテンツです．
+この教材は数理・データ科学・AIの導入により地域企業を変革するDXインフルエンサの養成プログラムの講座「統計プログラミングの初歩」のメインコンテンツです．
 
 :::{panels}
 :container:
@@ -38,17 +38,17 @@ if __name__ == "__main__":
 ---
 **NumPy**
 ^^^
-[NumPy](https://numpy.org/) は
+[NumPy](https://numpy.org/) は Python から呼び出せる，数値計算を行うためのライブラリです．これを利用して基本統計処理を学びます．
 
 ---
 **pandas**
 ^^^
-[pandas](https://pandas.pydata.org/) は
+[pandas](https://pandas.pydata.org/) は Python から呼び出せる，データを直感的に扱うためのライブラリです．これを利用して多変量データ解析を学びます．
 
 ---
 **matplotlib**
 ^^^
-[matplotlib](https://matplotlib.org/) は
+[matplotlib](https://matplotlib.org/) は Python から呼び出せる，描画をするためのライブラリです．データの可視化を行います．
 
 ---
 **scikit-learn**
