@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. 線形代数の基本計算" href="numpy-02.html" />
@@ -254,6 +256,58 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   2.2. NumPy の基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy1">
+     2.2.1. NumPyによる1次元配列
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.2.2. 配列のデータ数（標本数）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     2.2.3. 最大値と最小値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     2.2.4. 合計
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2.2.5. 平均値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2.2.6. 分散
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     2.2.7. 標準偏差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     2.2.8. 中央値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     2.2.9. 欠損値がある時の処理
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -306,6 +360,58 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   2.2. NumPy の基本操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy1">
+     2.2.1. NumPyによる1次元配列
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2.2.2. 配列のデータ数（標本数）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     2.2.3. 最大値と最小値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     2.2.4. 合計
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2.2.5. 平均値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2.2.6. 分散
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     2.2.7. 標準偏差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     2.2.8. 中央値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     2.2.9. 欠損値がある時の処理
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -351,6 +457,224 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">2.1.5. </span>学習の進め方<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>上から順に読み進み，<font color="blue">【実習】</font>と書いてある箇所でコードを書いて実行してください．基本的に入力するコードの前に見本のコードが書かれており，見本と同じコードを書けば正しく動作するようになっています（見本コードの上下に入っている区切り線は入力する必要ありません）．理解を深めるには，見本とは異なるコードを書いて試してみることも役立つと思います．
 なお， Colab では，コードが書かれている領域をコードセル，説明文等が書かれている領域をテキストセルといいます．</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">2.2. </span>NumPy の基本操作<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="numpy1">
+<h3><span class="section-number">2.2.1. </span>NumPyによる1次元配列<a class="headerlink" href="#numpy1" title="Permalink to this headline">¶</a></h3>
+<p>1変量データを扱う場合はNumPyアレイを使うと便利です．</p>
+<p><font color="blue">【実習】NumPyアレイにより架空の年齢データを保持する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">23</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">26</span><span class="p">])</span>
+<span class="n">ages</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">2.2.2. </span>配列のデータ数（標本数）<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】年齢データのデータ数を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">2.2.3. </span>最大値と最小値<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】年齢の最大値を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】年齢の最小値を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">2.2.4. </span>合計<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><font color="blue">【実習】全員の年齢の合計値を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">2.2.5. </span>平均値<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>平均値は下記の式で定義されます．
+$<span class="math notranslate nohighlight">\(\mu = \frac{1}{N}\sum_{i=1}^N x_i\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: データの平均値</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: 標本数</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: データ</p></li>
+</ul>
+<p><font color="blue">【実習】全員の年齢の平均値を計算する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<p><font color="blue">【実習】全員の年齢の平均値を自分で計算する．NumPy関数で計算した結果と同じになることを確認する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><span class="section-number">2.2.6. </span>分散<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>分散は「各データが平均値からどれほど離れているか」を表す指標です．</p></li>
+<li><p>「標本分散」と「不偏分散」の2つの定義がありますが，本講義では「標本分散」を扱います．</p></li>
+</ul>
+<ul class="simple">
+<li><p>（標本）分散は下記の式で定義されます．</p>
+<ul>
+<li><p>分散が大きいほど，各データが平均値から大きくズレていることを意味します．
+$<span class="math notranslate nohighlight">\(\sigma^2 = \frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2\)</span>$</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\sigma^2\)</span>: 分散</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: 標本数</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: 持っているデータの平均値</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: データ</p></li>
+</ul>
+</li>
+<li><p>上記式の分母を<span class="math notranslate nohighlight">\(N-1\)</span>にすると不偏分散となります．</p></li>
+</ul>
+</li>
+</ul>
+<p><font color="blue">【実習】年齢データの分散を計算する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><span class="section-number">2.2.7. </span>標準偏差<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>分散の平方根</p>
+<ul>
+<li><p>平方根を取ることで単位が元のデータと同じになる</p></li>
+<li><p>分散として本講義では標本分散を使う（不偏分散を使うこともある）</p></li>
+<li><p>数式で書くと以下のようになる
+$<span class="math notranslate nohighlight">\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2}\)</span>$</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span>: 標準偏差</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: 標本数</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: 持っているデータの平均値</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: データ</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>各データの平均値からのズレの大きさを表す指標</p></li>
+<li><p>しばしばSDと表記される(英語だとStandard Deviationのため)</p></li>
+</ul>
+<p><font color="blue">【実習】年齢データの標準偏差を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>年齢データの平均値からのズレは10歳くらいであると言えます．</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><span class="section-number">2.2.8. </span>中央値<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>データを大きい順に並び替えた時に，真ん中にくるデータの値</p>
+<ul>
+<li><p>データ数が偶数の時は真ん中二つのデータの平均値となる</p></li>
+</ul>
+</li>
+</ul>
+<p><font color="blue">【実習】年齢データの中央値を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>真ん中の値は18と23なので，それらの平均値（20.5）になります．</p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><span class="section-number">2.2.9. </span>欠損値がある時の処理<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>データ収集で一部のデータが入手できなかった場合など，一部のデータが欠落することがある．<br />
+このような欠落した値を欠損値という．</p></li>
+<li><p>NumPyでは欠損値を<code class="docutils literal notranslate"><span class="pre">np.nan</span></code>と表す</p></li>
+<li><p>NumPyでは欠損値を含んだNumPyアレイ(ndarray)に対する基本統計処理の関数が用意されている</p>
+<ul>
+<li><p>従来の関数名の前に<code class="docutils literal notranslate"><span class="pre">nan</span></code>をつける</p></li>
+</ul>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>統計値</p></th>
+<th class="head"><p>欠損値なし</p></th>
+<th class="head"><p>欠損値あり</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>最大値</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">max</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanmax</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>最小値</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">min</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanmin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>合計</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sum</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nansum</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>平均</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mean</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanmean</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>分散</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">var</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanvar</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>標準偏差</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">std</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanstd</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>中央値</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">median</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nanmedian</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><font color="blue">【実習】5つのバイトの時給はそれぞれ，1013, 790, 810, n/a, 1500である(n/aは入手不可; not available)．このデータについて，基本統計量を求める．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">pay</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1013</span><span class="p">,</span> <span class="mi">790</span><span class="p">,</span> <span class="mi">810</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1500</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Min: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Var: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanvar</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SD: &quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">pay</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>終わりです．</p>
+</div>
 </div>
 </div>
 </div>
