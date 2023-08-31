@@ -291,11 +291,6 @@ const thebe_selector_output = ".output, .cell_output"
      1.2.7. ライブラリのインポート
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     1.2.8. 文字列処理
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -388,11 +383,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id14">
      1.2.7. ライブラリのインポート
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id15">
-     1.2.8. 文字列処理
     </a>
    </li>
   </ul>
@@ -597,277 +587,169 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code class="docutils literal notranslate"><span class="pre">range(5)</span></code> は <code class="docutils literal notranslate"><span class="pre">[0，1，2，3，4]</span></code> の配列を生成するものと考えて問題ないです．</p>
 </div>
 <p>以下のように書くとリストに格納されているデータ全てにひとつずつアクセスすることができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">list_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;aaa&quot;</span><span class="p">]</span> <span class="c1"># declaration of variable list_a</span>
-    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">list_a</span><span class="p">:</span> <span class="c1"># repetitive access of list_a. w represents an element.</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># when you start a &quot;function&quot; you have to insert [tab] (and when you finish the function, also you need outdent)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】全てのデータに繰り返しアクセスする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">list_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;aaa&quot;</span><span class="p">]</span> <span class="c1"># declaration of variable list_a</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">list_a</span><span class="p">:</span> <span class="c1"># repetitive access of list_a. w represents an element.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># when you start a &quot;function&quot; you have to insert [tab] (and when you finish the function, also you need outdent)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>ディクショナリに対する繰り返しのアクセスは以下のようにします．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">}</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># dict_a.keys() is a list containing only keys of &quot;dict_a&quot;. or you can write simply &quot;dict_a&quot; instead of &quot;dict_a.keys()&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="c1"># k is a key and dict_a[k] is a value corresponding to the key.</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】ディクショナリのデータに繰り返しアクセスする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># dict_a.keys() is a list containing only keys of &quot;dict_a&quot;. or you can write simply &quot;dict_a&quot; instead of &quot;dict_a.keys()&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="c1"># k is a key and dict_a[k] is a value corresponding to the key.</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>ディクショナリ変数に <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> をつけることでディクショナリ変数に含まれるキーからなるリストを生成することができます．</p>
 </div>
 <p>以下のように書いても，上と全く同じ挙動を示します．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">}</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># k is a key and dict_a[k] is a value corresponding to the key.</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】ディクショナリのデータに繰り返しアクセスする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># k is a key and dict_a[k] is a value corresponding to the key.</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>この場合，<code class="docutils literal notranslate"><span class="pre">.items()</span></code> によってキーと値のペアが同時に抜き出されているのです．変数の内容を変更して，挙動を確認してみましょう！</p>
 </div>
 <p>繰り返し処理をする方法にはその他に，<code class="docutils literal notranslate"><span class="pre">while</span></code> があります．以下のようにして使います．<code class="docutils literal notranslate"><span class="pre">while</span></code> の右側に書いた条件が満たされる場合のみ，それ以下の処理を繰り返すというものです．この場合，<code class="docutils literal notranslate"><span class="pre">i</span></code> という変数が <code class="docutils literal notranslate"><span class="pre">10</span></code> より小さいとき処理が繰り返されます．そして，この <code class="docutils literal notranslate"><span class="pre">i</span></code> の値は <code class="docutils literal notranslate"><span class="pre">while</span></code> が1回実行されるたびに <code class="docutils literal notranslate"><span class="pre">1</span></code> ずつインクリメント（増加）されています．その表記が，<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> です．これは，<code class="docutils literal notranslate"><span class="pre">i</span></code> に「<code class="docutils literal notranslate"><span class="pre">i</span></code> に <code class="docutils literal notranslate"><span class="pre">1</span></code> を足した値」を代入しろという意味です．なので，この表記の前の <code class="docutils literal notranslate"><span class="pre">i</span></code> に比べて，表記の後の <code class="docutils literal notranslate"><span class="pre">i</span></code> は <code class="docutils literal notranslate"><span class="pre">1</span></code> だけ大きい値です．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># If the condition &quot;i &lt; 10&quot; is satisfied,</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># these two lines are processed.</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】<code class="docutils literal notranslate"><span class="pre">while</span></code> を使った繰り返し処理をする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <span class="c1"># If the condition &quot;i &lt; 10&quot; is satisfied,</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># these two lines are processed.</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>また，<code class="docutils literal notranslate"><span class="pre">while</span></code> は以下のようにして用いることもできます．この <code class="docutils literal notranslate"><span class="pre">!=</span></code> は「この記号の右側と左側の値が等しくない」ということを意味します．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】<code class="docutils literal notranslate"><span class="pre">while</span></code> を使った繰り返し処理をする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="id12">
 <h3><span class="section-number">1.2.5. </span>条件分岐<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>プログラミング言語にとって重要な要素として「if」があります．これは条件分岐のためのシステムです．以下のように書くと，もし <code class="docutils literal notranslate"><span class="pre">i</span></code> の値が2であるときのみ出力がされます．ここで，<code class="docutils literal notranslate"><span class="pre">==</span></code> という記号は「記号の右側と左側の値が等しい」ということを意味し，現実世界の「=」と同義です．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】条件分岐を実行する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>繰り返し処理と条件分岐を組み合わせることで複雑な動作を実現することができます．以下のように書くと，もしキーが「January」であった場合，「1」が表示されます．それ以外でもし，「ディクショナリ変数のバリューが 2」であった場合，<code class="docutils literal notranslate"><span class="pre">February</span> <span class="pre">corresponds</span> <span class="pre">to</span> <span class="pre">2</span> <span class="pre">in</span> <span class="pre">dict_a.</span></code> と表示されます．それら以外の全ての場合おいては，<code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">January</span> <span class="pre">or</span> <span class="pre">February.</span></code> と表示されます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span> <span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">}</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;January&quot;</span><span class="p">:</span> <span class="c1"># a condition means if variable &quot;k&quot; is same as &quot;January&quot;</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="c1"># If the above condition is satisfied, this line is executed. do not forget an indent</span>
-        <span class="k">elif</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="c1"># If &quot;k&quot; is not &quot;January&quot; and &quot;dict_a[k]&quot; is same as &quot;2&quot;,</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;corresponds to&quot;</span><span class="p">,</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="s2">&quot;in dict_a.&quot;</span><span class="p">)</span> <span class="c1"># this line is executed.</span>
-        <span class="k">else</span><span class="p">:</span> <span class="c1"># In all situation except above two condition,</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&quot;is not January or February.&quot;</span><span class="p">)</span> <span class="c1"># this line is executed.</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<p><font color="blue">【実習】繰り返し処理を利用した複雑な条件分岐を実行する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">dict_a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;January&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span> <span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span> <span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dict_a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s2">&quot;January&quot;</span><span class="p">:</span> <span class="c1"># a condition means if variable &quot;k&quot; is same as &quot;January&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="c1"># If the above condition is satisfied, this line is executed. do not forget an indent</span>
+    <span class="k">elif</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="c1"># If &quot;k&quot; is not &quot;January&quot; and &quot;dict_a[k]&quot; is same as &quot;2&quot;,</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;corresponds to&quot;</span><span class="p">,</span> <span class="n">dict_a</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="s2">&quot;in dict_a.&quot;</span><span class="p">)</span> <span class="c1"># this line is executed.</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># In all situation except above two condition,</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&quot;is not January or February.&quot;</span><span class="p">)</span> <span class="c1"># this line is executed.</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="id13">
 <h3><span class="section-number">1.2.6. </span>関数<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>プログラミングをするにあたり，関数というものはとても大事な概念です．関数はあるプロセスの一群をまとめるためのシステムです．書いたプロセスを関数化することで，ソースコードの可読性が上がります．また，処理に汎用性を与えることができるようになります．同じ処理を変数の値だけを変えて何度も行いたい場合は同じ処理を何度も書くより，関数化して，必要なときにその関数を呼び出す，といったやり方が効率的です．関数は， <code class="docutils literal notranslate"><span class="pre">def</span></code> というものを使って生成します．これまでに書いてきたプログラムにも <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">main()</span></code> という表記がありました．これは， <code class="docutils literal notranslate"><span class="pre">main()</span></code> という関数を定義するものです．そして，その <code class="docutils literal notranslate"><span class="pre">main()</span></code> という関数をソースコードの一番下，<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>で呼び出して使っていたということです．この <code class="docutils literal notranslate"><span class="pre">main()</span></code> 以外にも，プログラマーは自由に関数を定義することができます．以下のように <code class="docutils literal notranslate"><span class="pre">func_1()</span></code> という関数を作って，それを <code class="docutils literal notranslate"><span class="pre">main()</span></code> の中で実行することができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">func_1</span><span class="p">()</span> <span class="c1"># The function &quot;func_1()&quot; is executed in a function &quot;main()&quot;.</span>
-
+<p><font color="blue">【実習】関数を定義して呼び出す．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span> <span class="c1"># Declaration of a novel function &quot;func_1()&quot;.</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span> <span class="c1"># substance of &quot;func_1()&quot;</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span> <span class="c1"># The function &quot;main()&quot; is executed (and &quot;main()&quot; execute &quot;func_1()&quot; and &quot;func_1()&quot; execute &quot;print(&quot;Hello&quot;)&quot;).</span>
+    
+<span class="n">func_1</span><span class="p">()</span> <span class="c1"># The function &quot;func_1()&quot; is executed in a function &quot;main()&quot;.</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> を書かない人結構いますが，では，その書いたプログラム，<a class="reference external" href="http://hoge.py">hoge.py</a> としましょう，別のプログラムでインポート <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">hoge</span></code> したときの挙動は期待したものと異なると思いますのでので試してみましょう！あと，変数のスコープの管理もしやすいです．</p>
-</div>
 <p>関数を生成する際に <code class="docutils literal notranslate"><span class="pre">()</span></code> が付属していますが，これは，引数（ひきすう，パラメータ）の受け渡しに使うためのものです．以下のように書くと，<code class="docutils literal notranslate"><span class="pre">Python</span></code> という文字列が格納された変数 <code class="docutils literal notranslate"><span class="pre">str_1</span></code> を関数 <code class="docutils literal notranslate"><span class="pre">func_1()</span></code> のパラメータとして関数が実行されます．その後，<code class="docutils literal notranslate"><span class="pre">func_1()</span></code> 内では，パラメータ <code class="docutils literal notranslate"><span class="pre">str_1</span></code>（<code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">Python</span></code>）を <code class="docutils literal notranslate"><span class="pre">func_1()</span></code> の中でのみ定義されるパラメータ変数である <code class="docutils literal notranslate"><span class="pre">arg_1</span></code> で受け取りそれを利用して新たな処理が実行されます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">str_1</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
-    <span class="n">func_1</span><span class="p">(</span><span class="n">str_1</span><span class="p">)</span> <span class="c1"># pass the variable &quot;str_1&quot; to the function &quot;func_1&quot;</span>
-
+<p><font color="blue">【実習】引数を与えて関数を定義して呼び出す．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="k">def</span> <span class="nf">func_1</span><span class="p">(</span><span class="n">arg_1</span><span class="p">):</span> <span class="c1"># To get argument from external call, you need to set a variable to receive the argument. In this case, it is &quot;arg_1&quot;.</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">arg_1</span><span class="p">)</span> <span class="c1"># print &quot;Hello&quot; and arg_1 (= str_1 in main() = &quot;Python&quot;).</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">str_1</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">func_1</span><span class="p">(</span><span class="n">str_1</span><span class="p">)</span> <span class="c1"># pass the variable &quot;str_1&quot; to the function &quot;func_1&quot;</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>また，関数はその関数内で処理された結果の値を関数の呼び出し元に返す (呼び出し元の関数内で使うことができるように値を渡す) ことができます．例えば，以下のように書くと，<code class="docutils literal notranslate"><span class="pre">summation()</span></code> の呼び出し元に対して，<code class="docutils literal notranslate"><span class="pre">summation()</span></code> で計算した結果（リスト内の数値の和）が返ってきます．その返ってきた値を変数 <code class="docutils literal notranslate"><span class="pre">result_1</span></code> に格納してその後の処理に利用することができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># a list to be calculated</span>
-    <span class="n">result_1</span> <span class="o">=</span> <span class="n">summation</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1"># execution of summation(). Numbers is passed to the function. And the result of the function is assigned to the variable &quot;result_1&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">result_1</span><span class="p">)</span>
-
+<p><font color="blue">【実習】戻り値を獲得する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">arg_1</span><span class="p">):</span> <span class="c1"># arg_1 is a variable to contain the argument (numbers in main()).</span>
     <span class="n">sumvalue</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># A variable to contain a result of summation.</span>
     <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">arg_1</span><span class="p">:</span>
         <span class="n">sumvalue</span> <span class="o">=</span> <span class="n">sumvalue</span> <span class="o">+</span> <span class="n">number</span> <span class="c1"># this means &quot;sum is renewed by the value of sum + number&quot;</span>
     <span class="k">return</span> <span class="n">sumvalue</span> <span class="c1"># return the result of above calculation to the function caller by the word &quot;return&quot;</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># a list to be calculated</span>
+<span class="n">result_1</span> <span class="o">=</span> <span class="n">summation</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="c1"># execution of summation(). Numbers is passed to the function. And the result of the function is assigned to the variable &quot;result_1&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_1</span><span class="p">)</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="id14">
 <h3><span class="section-number">1.2.7. </span>ライブラリのインポート<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<p>上では関数を作ってプログラムを便利にしてきましたが，世界には様々な便利な関数をまとめたライブラリが存在します．これを使うと様々な便利なことをすごく簡単な記述で実現可能です．そういった関数の集まりをライブラリと言いますが，ここではそれらライブラリの使い方を学びます．ライブラリは以下のように，<code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">python3</span></code> の下に <code class="docutils literal notranslate"><span class="pre">import</span></code> という表記によりプログラム中で使うことを宣言します（利用する直前に呼び出しても良い）．以下では，「statistics」というモジュールを使うことを明示しています．以下は実行しても何もしない（ライブラリをインポートすることだけをする）プログラムです．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<p>上では関数を作ってプログラムを便利にしてきましたが，世界には様々な便利な関数をまとめたライブラリが存在します．これを使うと様々な便利なことをすごく簡単な記述で実現可能です．そういった関数の集まりをライブラリと言いますが，ここではそれらライブラリの使い方を学びます．ライブラリは以下のように，<code class="docutils literal notranslate"><span class="pre">import</span></code> という表記によりプログラム中で使うことを宣言します（利用する直前に呼び出しても良い）．以下では，「statistics」というモジュールを使うことを明示しています．以下は実行しても何もしない（ライブラリをインポートすることだけをする）プログラムです．</p>
+<p><font color="blue">【実習】ライブラリをインポートする．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="kn">import</span> <span class="nn">statistics</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>この世にどんなライブラリがあるのかは人に聞くとか Google で調べることとかで知ることができます．</p>
 </div>
-<p>複数個のモジュールを呼び込むときは以下のように書くことができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">statistics</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">pass</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>この Google Colaboratory を閉じるか時間経過によって強制的に閉じられるまでインポートしたライブラリは有効です．</p>
 </div>
 <p>例えば，モジュール「statistics」を用いれば平均や標準偏差の計算が 1 行で可能です．モジュールに入っている関数（メソッド）を使うときは「モジュール名.関数名()」という形式で書きます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">statistics</span>
+<p><font color="blue">【実習】ライブラリを利用して計算を実行する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
+<span class="n">linumber</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">linumber</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean:&quot;</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">linumber</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sd:&quot;</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">linumber</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mean:&quot;</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">linumber</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sd:&quot;</span><span class="p">,</span> <span class="n">statistics</span><span class="o">.</span><span class="n">stdev</span><span class="p">(</span><span class="n">linumber</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>また，モジュール「math」を用いれば数学で用いられる様々な関数 (数学における関数) を簡単に記述することができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<p><font color="blue">【実習】別のライブラリを利用して計算を実行する．</font></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_10:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_2:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_e:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_10:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_2:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;log_e:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span> <span class="c1">#This is radian of an angle of 180 degrees</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span> <span class="c1">#This is radian of an angle of 180 degrees</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>これまでは Python にデフォルトで組み込まれているモジュールのみを使ってきましたが，外部で用意されているモジュールを使うことも可能です．外部のモジュールはインストールしなければなりません．そのためにはコマンドライン上で「pip3」というコマンドを用います．例えば，数値計算を行うためのモジュール「NumPy」は以下のようにすることでインストールすることができます．現在使っている Python（正確には Python3）と pip3 が紐付いており，pip3 で外部からインストールしたライブラリは Python3 から呼び出すことができるのです．</p>
 <div class="cell docutils container">
@@ -892,124 +774,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>本物のコマンドライン上で実行するときには <code class="docutils literal notranslate"><span class="pre">!</span></code> は不要です．</p>
-</div>
-</div>
-<div class="section" id="id15">
-<h3><span class="section-number">1.2.8. </span>文字列処理<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<p>プログラミング言語は「正規表現（regular expression）」と呼ばれる文字列パターン表現方法を持ちます．プログラミングで文字列を操作するための非常に強力なツールです．Python で正規表現を使用する場合は、「re」 ライブラリを利用します．ここでは，以下のような文を用いて正規表現を学びます．</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2018</span> <span class="p">(</span><span class="n">MMXVIII</span><span class="p">)</span> <span class="n">was</span> <span class="n">a</span> <span class="n">common</span> <span class="n">year</span> <span class="n">starting</span> <span class="n">on</span> <span class="n">Monday</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Gregorian</span> <span class="n">calendar</span><span class="p">,</span> <span class="n">the</span> <span class="mi">2018</span><span class="n">th</span> <span class="n">year</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Common</span> <span class="n">Era</span> <span class="p">(</span><span class="n">CE</span><span class="p">)</span> <span class="ow">and</span> <span class="n">Anno</span> <span class="n">Domini</span> <span class="p">(</span><span class="n">AD</span><span class="p">)</span> <span class="n">designations</span><span class="p">,</span> <span class="n">the</span> <span class="mi">18</span><span class="n">th</span> <span class="n">year</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">millennium</span><span class="p">,</span> <span class="n">the</span> <span class="mi">18</span><span class="n">th</span> <span class="n">year</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">21</span><span class="n">st</span> <span class="n">century</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="mi">9</span><span class="n">th</span> <span class="n">year</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">2010</span><span class="n">s</span> <span class="n">decade</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>この文に存在するアラビア数字を抜き出したいとき，以下のようなプログラムを書きます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade.&quot;</span>
-    <span class="n">liresult</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">liresult</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>このコードにおいて 6 行目の <code class="docutils literal notranslate"><span class="pre">\d+</span></code> が正規表現です．<code class="docutils literal notranslate"> <span class="pre">\d</span></code> が「アラビア数字の任意の 1 文字」を表し，その後の <code class="docutils literal notranslate"><span class="pre">+</span></code> は「前の表現の 1 回以上の繰り返し」を意味しています．すなわち，<code class="docutils literal notranslate"><span class="pre">\d+</span></code> は「1 つ以上のアラビア数字が連続した文字列」を意味します．関数 <code class="docutils literal notranslate"><span class="pre">re.findall()</span></code> は最初の引数に指定されたパターン（正規表現）を2番目で指定された文字列より検索して抽出するための役割を果たします．</p>
-<p>次に，以下のプログラムを実行します．これによって得られるリストには，「大文字から始まる文字列」が含まれます．使用する正規表現において，<code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code> は大文字，<code class="docutils literal notranslate"><span class="pre">[a-z]</span></code> は小文字を意味します．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade.&quot;</span>
-    <span class="n">liresult</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;[A-Z][a-z]+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">liresult</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>以下のように，関数 <code class="docutils literal notranslate"><span class="pre">re.search()</span></code> を用いると，文の最初（<code class="docutils literal notranslate"><span class="pre">^</span></code>）にアラビア数字が含まれるかどうかを判定できます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade.&quot;</span>
-    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;^\d&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>以下のように書くと，「<code class="docutils literal notranslate"><span class="pre">(</span></code> から始まり，何らかの文字が1個以上連続し，<code class="docutils literal notranslate"><span class="pre">)</span> </code> で終了する文字列」を全て削除（何もないものに置換）することができます．関数 <code class="docutils literal notranslate"><span class="pre">re.sub()</span></code> は第3引数の文字列から，第1引数の文字列を同定し，それを第2引数の値で置換するためのものです．この場合，<code class="docutils literal notranslate"><span class="pre">(</span></code> および <code class="docutils literal notranslate"><span class="pre">)</span></code> をそれぞれ <code class="docutils literal notranslate"><span class="pre">\(</span></code> および <code class="docutils literal notranslate"><span class="pre">\)</span></code> のように表記していますが，これは <code class="docutils literal notranslate"><span class="pre">(</span></code> および <code class="docutils literal notranslate"><span class="pre">)</span></code> が正規表現のための記号として用いられるものであるため，正規表現としてそれらを利用したい場合には，そのための特別な表記としなければならないためです．この操作は，「エスケープする」というように表現します．また，<code class="docutils literal notranslate"><span class="pre">\w</span></code> は「何らかの文字」，<code class="docutils literal notranslate"><span class="pre">\s</span></code> は「空白文字（スペース等）」を意味します．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade.&quot;</span>
-    <span class="n">replaced_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;\(\w+\)\s&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">replaced_text</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>以下の関数 <code class="docutils literal notranslate"><span class="pre">re.split()</span></code> を利用すると「文字列を空白文字がひとつ以上連続した文字列（<code class="docutils literal notranslate"><span class="pre">\s+</span></code>）」を区切り文字として分割することができます．これは文字列処理をする場合によく用いる関数です．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade.&quot;</span>
-    <span class="n">liresult</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">liresult</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Python の正規表現をまとめたウェブサイトには以下のようなものがあります．</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.debuggex.com/cheatsheet/regex/python">https://www.debuggex.com/cheatsheet/regex/python</a></p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/howto/regex.html">https://docs.python.org/3/howto/regex.html</a></p></li>
-</ul>
-<p>ちょっと以下のものは行儀が良くないので，説明は省きますが以下のようにすると何かのプログラムを実行した結果を処理することができます．</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;ls sample_data&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>これのどこが行儀が良くないのかはインジェクションで調べてみるとわかります．</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
