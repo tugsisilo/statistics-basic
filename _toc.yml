@@ -4,7 +4,8 @@ defaults:
   numbered: true
 chapters:
 - file: notebook/python
-- file: notebook/numpy
+- file: notebook/numpy-01
+- file: notebook/numpy-02
 - file: notebook/pandas
 - file: notebook/matplotlib
 - file: notebook/scikit-learn
