@@ -36,14 +36,26 @@ if __name__ == "__main__":
 ```
 
 ---
-**scikit-learn**
+**NumPy**
 ^^^
-[scikit-learn](https://scikit-learn.org/) は機械学習法を実現するためのライブラリです．決定木，サポートベクトルマシン，クラスタリング等の様々な方法を利用することができます．scikit-learn は利用方法がとても簡単でそれらをコマンド一発で実行することができます．機械学習アルゴリズムはそれぞれ性質の異なるものですが，scikit-learn には基本的な書き方があり，それさえ学んでしまえば，ある機械学習法で何らかのデータを解析するプログラムを別の機械学習法でデータを解析するプログラムに書き換えることが容易にできます．深層学習法のライブラリとしては TensorFlow や PyTorch がありますが，それらを使う必要がない場合にはこのライブラリをまずは使ってみることは良い選択肢のひとつかもしれません．
+[NumPy](https://numpy.org/) は
 
 ---
-**TensorFlow**
+**pandas**
 ^^^
-[TensorFlow](https://www.tensorflow.org/) は世界で最も利用されている深層学習フレームワークです．scikit-learn ではできない複雑なニューラルネットワーク構造を実現することができます．TensorFlow はひとつのフレームワークなのですが，コーディングをする際にいくつかの書き方があります．Sequential な書き方，Functional な書き方，Subclassing な書き方です．Sequential な書き方はとても簡単にニューラルネットワークを実現することができます．しかし，拡張性が高くありません．Subclassing API は最も柔軟な書き方が可能です．習得は大して難しくありません．習得の難易度とニューラルネットワークに対する理解を得られる度合いや柔軟にネットワークを構築できる利点を天秤にかけたときに，Subclassing API を最初に学習した方が得られるものが多いと思い，これを紹介します．Subclassing API は [PyTorch](https://pytorch.org/)（元々は [Chainer](https://chainer.org/) の書き方 = define by run）とほぼ同じ書き方です．
+[pandas](https://pandas.pydata.org/) は
+
+---
+**matplotlib**
+^^^
+[matplotlib](https://matplotlib.org/) は
+
+---
+**scikit-learn**
+^^^
+[scikit-learn](https://scikit-learn.org/) は機械学習法を実現するためのライブラリです．この講座では回帰分析やデータの分類をするために利用します．
+
+
 
 :::
 
