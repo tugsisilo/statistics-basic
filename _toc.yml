@@ -2,10 +2,16 @@ format: jb-book
 root: index
 defaults:
   numbered: true
-chapters:
-- file: notebook/python
-- file: notebook/numpy-01
-- file: notebook/numpy-02
-- file: notebook/pandas
-- file: notebook/matplotlib
-- file: notebook/scikit-learn
+parts:
+- caption: 講義
+  chapters:
+  - file: notebook/python
+  - file: notebook/numpy-01
+  - file: notebook/numpy-02
+  - file: notebook/pandas
+  - file: notebook/matplotlib
+  - file: notebook/scikit-learn
+- caption: 付録
+  numbered: False
+  chapters:
+  - file: notebook/worksheet
