@@ -3,5 +3,8 @@ root: index
 defaults:
   numbered: true
 chapters:
+- file: notebook/python
 - file: notebook/numpy
-- file: notebook/data-analysis
+- file: notebook/pandas
+- file: notebook/matplotlib
+- file: notebook/scikit-learn
