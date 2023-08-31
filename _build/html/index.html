@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>はじめに &#8212; 実践データ科学</title>
+    <title>はじめに &#8212; 統計プログラミングの初歩</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. 1. はじめに" href="notebook/numpy.html" />
+    <link rel="next" title="1. プログラミングの基本操作" href="notebook/python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -82,7 +82,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/neko.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">実践データ科学</h1>
+      <h1 class="site-logo" id="site-title">統計プログラミングの初歩</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -90,30 +90,30 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  データ科学を学ぶにあたって
- </span>
-</p>
-<ul class="nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebook/numpy.html">
-   1. 1.
-   <font color="Crimson">
-    はじめに
-   </font>
+  <a class="reference internal" href="notebook/python.html">
+   1. プログラミングの基本操作
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  scikit-learn を利用した機械学習
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebook/data-analysis.html">
-   5. Pythonによるデータ解析と可視化
+  <a class="reference internal" href="notebook/numpy.html">
+   2. 基本統計処理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook/pandas.html">
+   3. 多変量データ解析
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook/matplotlib.html">
+   4. データ可視化
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook/scikit-learn.html">
+   5. 回帰と分類
   </a>
  </li>
 </ul>
@@ -223,23 +223,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gpu">
-     GPU の利用方法
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
      開始前に行うこと
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     進め方
+     コードセル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     コードセル
+     進め方
     </a>
    </li>
   </ul>
@@ -287,23 +282,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gpu">
-     GPU の利用方法
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
      開始前に行うこと
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     進め方
+     コードセル
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     コードセル
+     進め方
     </a>
    </li>
   </ul>
@@ -322,12 +312,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a class="reference external" href="https://www.python.org/"><img alt="made-with-python" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg" /></a>
 <a class="reference external" href="https://numpy.org/"><img alt="made-with-numpy" src="https://img.shields.io/badge/Made%20with-NumPy-1f425f.svg" /></a>
 <a class="reference external" href="https://matplotlib.org/"><img alt="made-with-matplotlib" src="https://img.shields.io/badge/Made%20with-Matplotlib-1f425f.svg" /></a>
-<a class="reference external" href="https://scikit-learn.org/"><img alt="made-with-scikit-learn" src="https://img.shields.io/badge/Made%20with-scikit--learn-1f425f.svg" /></a>
-<a class="reference external" href="https://tensorflow.org/"><img alt="made-with-tensorflow" src="https://img.shields.io/badge/Made%20with-TensorFlow-1f425f.svg" /></a>
-<img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></p>
+<a class="reference external" href="https://scikit-learn.org/"><img alt="made-with-scikit-learn" src="https://img.shields.io/badge/Made%20with-scikit--learn-1f425f.svg" /></a></p>
 <div class="section" id="id2">
 <h2>この教材について<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>この教材は未踏スケールデータアナリティクスセンターと創薬等先端技術支援基盤プラットフォーム（Basis for Supporting innovative Drug Discovery and Life Science Research（BINDS））に関連する方向けに，<strong>Python</strong> の使い方，基本的な<strong>機械学習法</strong>の実装の仕方，<strong>深層学習法</strong>の実装の仕方を紹介する教材です．</p>
+<p>この教材は数理・データ科学・AIの導入により地域企業を変革するDXインフルエンサの養成プログラムの講座「統計プログラミングの初歩」のメインコンテンツです．</p>
 <div class="sphinx-bs docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 px-2 py-2 docutils">
@@ -336,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="card-text"><strong>対象者</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text">これからデータ科学を用いた解析技術を身につけたい人．プログラミングの経験，機械学習に関する知識はないことを前提にしています．</p>
+<p class="card-text">これから統計学についての知識を深めたい人．プログラミングの経験，機械学習，統計学に関する知識はないことを前提にしています．</p>
 </div>
 </div>
 </div>
@@ -362,20 +350,40 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="d-flex col-lg-6 px-2 py-2 docutils">
 <div class="card w-100 docutils">
 <div class="card-header docutils">
-<p class="card-text"><strong>scikit-learn</strong></p>
+<p class="card-text"><strong>NumPy</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text"><a class="reference external" href="https://scikit-learn.org/">scikit-learn</a> は機械学習法を実現するためのライブラリです．決定木，サポートベクトルマシン，クラスタリング等の様々な方法を利用することができます．scikit-learn は利用方法がとても簡単でそれらをコマンド一発で実行することができます．機械学習アルゴリズムはそれぞれ性質の異なるものですが，scikit-learn には基本的な書き方があり，それさえ学んでしまえば，ある機械学習法で何らかのデータを解析するプログラムを別の機械学習法でデータを解析するプログラムに書き換えることが容易にできます．深層学習法のライブラリとしては TensorFlow や PyTorch がありますが，それらを使う必要がない場合にはこのライブラリをまずは使ってみることは良い選択肢のひとつかもしれません．</p>
+<p class="card-text"><a class="reference external" href="https://numpy.org/">NumPy</a> は Python から呼び出せる，数値計算を行うためのライブラリです．これを利用して基本統計処理を学びます．</p>
 </div>
 </div>
 </div>
 <div class="d-flex col-lg-6 px-2 py-2 docutils">
 <div class="card w-100 docutils">
 <div class="card-header docutils">
-<p class="card-text"><strong>TensorFlow</strong></p>
+<p class="card-text"><strong>pandas</strong></p>
 </div>
 <div class="card-body docutils">
-<p class="card-text"><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> は世界で最も利用されている深層学習フレームワークです．scikit-learn ではできない複雑なニューラルネットワーク構造を実現することができます．TensorFlow はひとつのフレームワークなのですが，コーディングをする際にいくつかの書き方があります．Sequential な書き方，Functional な書き方，Subclassing な書き方です．Sequential な書き方はとても簡単にニューラルネットワークを実現することができます．しかし，拡張性が高くありません．Subclassing API は最も柔軟な書き方が可能です．習得は大して難しくありません．習得の難易度とニューラルネットワークに対する理解を得られる度合いや柔軟にネットワークを構築できる利点を天秤にかけたときに，Subclassing API を最初に学習した方が得られるものが多いと思い，これを紹介します．Subclassing API は <a class="reference external" href="https://pytorch.org/">PyTorch</a>（元々は <a class="reference external" href="https://chainer.org/">Chainer</a> の書き方 = define by run）とほぼ同じ書き方です．</p>
+<p class="card-text"><a class="reference external" href="https://pandas.pydata.org/">pandas</a> は Python から呼び出せる，データを直感的に扱うためのライブラリです．これを利用して多変量データ解析を学びます．</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-header docutils">
+<p class="card-text"><strong>matplotlib</strong></p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><a class="reference external" href="https://matplotlib.org/">matplotlib</a> は Python から呼び出せる，描画をするためのライブラリです．データの可視化を行います．</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 px-2 py-2 docutils">
+<div class="card w-100 docutils">
+<div class="card-header docutils">
+<p class="card-text"><strong>scikit-learn</strong></p>
+</div>
+<div class="card-body docutils">
+<p class="card-text"><a class="reference external" href="https://scikit-learn.org/">scikit-learn</a> は機械学習法を実現するためのライブラリです．この講座では回帰分析やデータの分類をするために利用します．</p>
 </div>
 </div>
 </div>
@@ -383,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="id3">
 <h3>このコンテンツで学ぶこと<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>このコンテンツの目的は，ウェブベースの計算環境である Jupyter Notebook（このウェブページを形作っているもの）を利用して，Python や機械学習ライブラリの基本的な動作を習得することです．このコンテンツは東北大学大学院情報科学研究科のプログラミング初学者向けの授業「ビッグデータスキルアップ演習（Big Data Skillup Training）」の内容の一部を日本語の e-learning コンテンツとして再構築したものです．</p>
+<p>このコンテンツの目的は，ウェブベースの計算環境である Jupyter Notebook（このウェブページを形作っているもの）を利用して，Python で実際にプログラミングをすることで統計解析の基本を学ぶものです．このコンテンツは東北大学大学院情報科学研究科の小池敦が主に構築したものを同じく山田和範が編集したものです．</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>つまり，このコンテンツに間違いが含まれていても山田はまったく悪くなくて元の作成者が悪いです．</p>
@@ -397,10 +405,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="id5">
 <h2>教材の利用方法<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>この教材は Google Colaboratory（グーグルコラボラトリー）を利用して作られています．グーグルコラボラトリーは Jupyter Notebook のファイルをウェブブラウザから使えるように Google が用意してくれたアプリです．各ページの上部にロケットのアイコン <i class="fa fa-rocket" aria-hidden="true"></i> があるのでこれをクリックして各ページのファイルを Google Colaboratory 上で開いて利用してください．</p>
-<div class="section" id="gpu">
-<h3>GPU の利用方法<a class="headerlink" href="#gpu" title="Permalink to this headline">¶</a></h3>
-<p>グーグルコラボラトリーで GPU を利用するには上のメニューの「ランタイム」から「ランタイムのタイプを変更」と進み，「ハードウェアアクセラレータ」の「GPU」を選択します</p>
-</div>
 <div class="section" id="id6">
 <h3>開始前に行うこと<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="admonition hint">
@@ -409,18 +413,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id7">
-<h3>進め方<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>上から順番に読み進めます．Python のコードが書かれている場合は実行ボタンをクリックして実行します．コード内の値を変えたり，関数を変えたりして挙動を確かめてみてください．</p>
-</div>
-<div class="section" id="id8">
-<h3>コードセル<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>コードセル<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>コードセルとは，Python のコードを書き込み実行するためのセルです．以下のような灰色のボックスで表示されていますす．ここにコードを書きます．実行はコードセルの左に表示される「実行ボタン」をクリックするか，コードセルを選択した状態で <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> を押します．環境によっては行番号が表示されていると思いますので注意してください（行番号の数字はプログラムの構成要素ではありません）．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a code cell.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="section" id="id8">
+<h3>進め方<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>上から順番に読み進めます．Python のコードが書かれていますので，それをコードセルに入力して実行します．コード内の値を変えたり，関数を変えたりして挙動を確かめてみてください．</p>
 </div>
-<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -451,10 +453,10 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="notebook/numpy.html" title="next page">
+    <a class='right-next' id="next-link" href="notebook/python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>1. <font color="Crimson">はじめに</font></p>
+        <p class="prev-next-title"><span class="section-number">1. </span>プログラミングの基本操作</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

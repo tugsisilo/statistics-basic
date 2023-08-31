@@ -2,10 +2,9 @@ format: jb-book
 root: index
 defaults:
   numbered: true
-parts:
-- caption: データ科学を学ぶにあたって
-  chapters:
-  - file: notebook/numpy
-- caption: scikit-learn を利用した機械学習
-  chapters:
-  - file: notebook/data-analysis
+chapters:
+- file: notebook/python
+- file: notebook/numpy
+- file: notebook/pandas
+- file: notebook/matplotlib
+- file: notebook/scikit-learn

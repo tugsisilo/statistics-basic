@@ -1,0 +1,346 @@
+print("Hello world")
+
+
+
+#!/usr/bin/env python3
+
+def main():
+    print(10 - 2) # subtraction
+    print(90 / 3) # division
+    print(51 * 5) # multiplication
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    a = 3 # assign a value "3" to a variable "a"  ==
+    b = 18
+    print(a + b) # addition
+    print(a - b) # subtraction
+    print(b / a) # division
+    print(a * b) # multiplication
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    aaa = 5
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    greeting = "Hello world"
+    print(greeting)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    greeting = "Hello world"
+    print("greeting")
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    a = "3"
+    b = "18"
+    print(a)
+    print(b / a)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    name = "Ken"
+    age = 6
+    print("{}, which is {} years old is now sitting.".format(name, age))
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    list_a = [10, 4, "aaa"] # declaration of a variable, list_a, this list variable contains three values
+    print(list_a[0]) # access first element of list_a
+    print(list_a[1]) # access second element of list_a
+    print(list_a[2]) # access third element of list_a
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    dict_a = {"January" : "1", "February" : "2"} # declaration of dictionary, dict_a. this dictionary contains two keys and two values
+    print(dict_a["January"]) # access a value corresponding to a key "January"
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    for i in [0, 1, 2, 3, 4]:
+        print(i)
+    print("hoge")
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    for i in range(5):
+        print(i)
+    print("hoge")
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    list_a = [10, 4, "aaa"] # declaration of variable list_a
+    for w in list_a: # repetitive access of list_a. w represents an element.
+        print(w) # when you start a "function" you have to insert [tab] (and when you finish the function, also you need outdent)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    dict_a = {"January" : "1", "February" : "2"}
+    for k in dict_a.keys(): # dict_a.keys() is a list containing only keys of "dict_a". or you can write simply "dict_a" instead of "dict_a.keys()"
+        print(k, dict_a[k]) # k is a key and dict_a[k] is a value corresponding to the key.
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    dict_a = {"January" : "1", "February" : "2"}
+    for k, v in dict_a.items():
+        print(k, v) # k is a key and dict_a[k] is a value corresponding to the key.
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    i = 0
+    while i < 10: # If the condition "i < 10" is satisfied,
+        print(i)
+        i = i + 1 # these two lines are processed.
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    i = 0
+    while i != 10:
+        print(i)
+        i = i + 1
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    for i in range(5):
+        if i == 2:
+            print(i)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    dict_a = {"January" : "1", "February" : "2", "May" : "5"}
+    for k in dict_a.keys():
+        if k == "January": # a condition means if variable "k" is same as "January"
+            print(dict_a[k]) # If the above condition is satisfied, this line is executed. do not forget an indent
+        elif dict_a[k] == "2": # If "k" is not "January" and "dict_a[k]" is same as "2",
+            print(k, "corresponds to", dict_a[k], "in dict_a.") # this line is executed.
+        else: # In all situation except above two condition,
+            print(k,"is not January or February.") # this line is executed.
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    func_1() # The function "func_1()" is executed in a function "main()".
+
+def func_1(): # Declaration of a novel function "func_1()".
+    print("Hello") # substance of "func_1()"
+
+if __name__ == "__main__":
+    main() # The function "main()" is executed (and "main()" execute "func_1()" and "func_1()" execute "print("Hello")").
+
+#!/usr/bin/env python3
+
+def main():
+    str_1 = "Python"
+    func_1(str_1) # pass the variable "str_1" to the function "func_1"
+
+def func_1(arg_1): # To get argument from external call, you need to set a variable to receive the argument. In this case, it is "arg_1".
+    print("Hello", arg_1) # print "Hello" and arg_1 (= str_1 in main() = "Python").
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+
+def main():
+    numbers = [2, 4, 5, -2, 3] # a list to be calculated
+    result_1 = summation(numbers) # execution of summation(). Numbers is passed to the function. And the result of the function is assigned to the variable "result_1"
+    print(result_1)
+
+def summation(arg_1): # arg_1 is a variable to contain the argument (numbers in main()).
+    sumvalue = 0 # A variable to contain a result of summation.
+    for number in arg_1:
+        sumvalue = sumvalue + number # this means "sum is renewed by the value of sum + number"
+    return sumvalue # return the result of above calculation to the function caller by the word "return"
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import statistics
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import statistics
+import sys
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import statistics
+
+def main():
+    linumber = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    print("mean:", statistics.mean(linumber))
+    print("sd:", statistics.stdev(linumber))
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import math
+
+def main():
+    x = 10
+    print("log_10:", math.log10(x))
+    print("log_2:", math.log2(x))
+    print("log_e:", math.log(x))
+
+    x = math.radians(180) #This is radian of an angle of 180 degrees
+    print(math.sin(x))
+    print(math.cos(x))
+    print(math.tan(x))
+
+if __name__ == "__main__":
+    main()
+
+! pip3 install numpy
+
+! pip3 list
+
+#!/usr/bin/env python3
+import re
+
+def main():
+    text = "2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade."
+    liresult = re.findall("\d+", text)
+    print(liresult)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import re
+
+def main():
+    text = "2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade."
+    liresult = re.findall("[A-Z][a-z]+", text)
+    print(liresult)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import re
+
+def main():
+    text = "2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade."
+    if re.search("^\d", text):
+        print("Yes")
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import re
+
+def main():
+    text = "2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade."
+    replaced_text = re.sub("\(\w+\)\s", "", text)
+    print(replaced_text)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import re
+
+def main():
+    text = "2018 (MMXVIII) was a common year starting on Monday of the Gregorian calendar, the 2018th year of the Common Era (CE) and Anno Domini (AD) designations, the 18th year of the 3rd millennium, the 18th year of the 21st century, and the 9th year of the 2010s decade."
+    liresult = re.split("\s+", text)
+    print(liresult)
+
+if __name__ == "__main__":
+    main()
+
+#!/usr/bin/env python3
+import subprocess
+
+def main():
+    text = subprocess.check_output("ls sample_data", shell=True).decode("utf-8").rstrip().split("\n")
+    print(text)
+
+if __name__ == "__main__":
+    main()
