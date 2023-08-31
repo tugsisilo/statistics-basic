@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="6. 線形回帰分析" href="scikit-learn.html" />
@@ -233,6 +235,93 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   はじめに
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     開始前に行うこと（重要）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     ライブラリのインポート
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     例題と解答例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   問題
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     繰り返し処理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     ライブラリの利用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     平均値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     標準偏差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     欠損値を含むデータ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     データフレームの生成
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     統計量の計算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     相関係数の計算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     線形回帰係数の同定
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     線形回帰による値の予測
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -245,6 +334,93 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   はじめに
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     開始前に行うこと（重要）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     ライブラリのインポート
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     例題と解答例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   問題
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     繰り返し処理
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     ライブラリの利用
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     平均値
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     標準偏差
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     欠損値を含むデータ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     データフレームの生成
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     統計量の計算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     相関係数の計算
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     線形回帰係数の同定
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     線形回帰による値の予測
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -253,6 +429,106 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>演習問題<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>はじめに<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>開始前に行うこと（重要）<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>まず，Chrome 等のブラウザを利用して，本教材の URL にアクセスし，画面の指示に従い Google アカウントにログインしてください．その後，ブラウザ表示画面左上の「ファイル」をクリックし，さらにポップアップで出てくる項目から「ドライブにコピーを保存」をクリックしてください．これにより，本教材のコピーが自分のGoogleドライブに保存され，自分で書いたプログラムを実行できるようになります．</p>
+<p>また，多くのセルが非表示になっていると思われるため，同じくブラウザ表示画面上の「表示」をクリックし，さらにその項目から「セクションを展開」をクリックし，非表示のセルを表示させてください．</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>各ページの上部にロケットのアイコン <i class="fa fa-rocket" aria-hidden="true"></i> があるのでこれをクリックして各ページのファイルを Google Colaboratory 上で開いて利用してください．</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>ライブラリのインポート<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>利用するライブラリをまとめてインポートしておきましょう．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>例題と解答例<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>以下のような問題が出ますので，問題を解決するためのコードを生成してください．</p>
+<p>5人の数学のテストの点数は72, 65, 60, 81, 78だった．この時，5人の平均点，標準偏差，中央値を求めよ．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score_math</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">72</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">78</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">score_math</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SD:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">score_math</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">score_math</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>問題<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>繰り返し処理<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>1から100までの整数を1行に1個の値が存在するように出力してください．</p>
+</div>
+<div class="section" id="id8">
+<h3>ライブラリの利用<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(log_2{10}\)</span> を小数点以下5桁の小数で表示してください．</p>
+</div>
+<div class="section" id="id9">
+<h3>平均値<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>5人の英語のテストの点数は28, 96, 40, 70, 52でした．このとき，5人の平均点を小数点以下1桁の値で出力してください．</p>
+</div>
+<div class="section" id="id10">
+<h3>標準偏差<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>5人の英語のテストの点数は28, 96, 40, 70, 52でした．このとき，5人の標準偏差を小数点以下1桁の値で出力してください．</p>
+</div>
+<div class="section" id="id11">
+<h3>欠損値を含むデータ<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>5人の地理のテストの点数は79, n/a, 85, 95, n/aでした（2名は未受験）．このとき，受験者の最高点を求めてください．</p>
+</div>
+<div class="section" id="id12">
+<h3>データフレームの生成<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>以下のようにすると iris というデータセットを <code class="docutils literal notranslate"><span class="pre">iris_dataset</span></code> に読み込むことができます．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="n">iris_dataset</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>このデータを列名が <code class="docutils literal notranslate"><span class="pre">feature_names</span></code> となるようにデータフレームに変換して，そのデータフレームを出力してください．</p>
+</div>
+<div class="section" id="id13">
+<h3>統計量の計算<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>特徴量のうちで「sepal length (cm)」の平均値を pandas のメソッドを使って計算し，その値のみを出力してください．</p>
+</div>
+<div class="section" id="id14">
+<h3>相関係数の計算<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>各特徴量の相関係数を pandas のメソッドを使って計算し，その表（データフレーム）を出力してください．</p>
+</div>
+<div class="section" id="id15">
+<h3>線形回帰係数の同定<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>特徴量「petal length (cm)」の値をそれ以外の特徴量のどれかひとつを利用し，線形回帰直線にて近似したいとき，上の相関係数の値から，どの特徴量を利用するのが最も良いでしょうか．そして，その特徴量を説明変数として線形回帰をしたときの，線形回帰係数の値を小数点以下3桁までの値で出力してください．</p>
+</div>
+<div class="section" id="id16">
+<h3>線形回帰による値の予測<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>構築した線形回帰法によるモデルの入力値（説明変数値）が 0.23 であったとき，「petal length (cm)」の予測値を，小数点以下3桁までの値で出力してください．</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>終わりです．</p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
