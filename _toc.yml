@@ -2,8 +2,6 @@ format: jb-book
 root: index
 defaults:
   numbered: true
-parts:
-- caption: データ科学を学ぶにあたって
-  chapters:
-  - file: notebook/numpy
-  - file: notebook/data-analysis
+chapters:
+- file: notebook/numpy
+- file: notebook/data-analysis
