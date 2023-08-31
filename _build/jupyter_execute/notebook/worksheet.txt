@@ -1,0 +1,35 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+sns.set()
+from sklearn.linear_model import LinearRegression
+
+score_math = np.array([72, 65, 60, 81, 78])
+print("Average:", np.mean(score_math))
+print("SD:", np.std(score_math))
+print("Median:", np.median(score_math))
+
+
+
+
+
+
+
+
+
+
+
+from sklearn.datasets import load_iris
+iris_dataset = load_iris()
+
+
+
+
+
+
+
+
+
+
