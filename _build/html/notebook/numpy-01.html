@@ -524,8 +524,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="id11">
 <h3><span class="section-number">2.2.5. </span>平均値<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>平均値は下記の式で定義されます．
-$<span class="math notranslate nohighlight">\(\mu = \frac{1}{N}\sum_{i=1}^N x_i\)</span>$</p>
+<p>平均値は下記の式で定義されます．</p>
+<div class="math notranslate nohighlight">
+\[\mu = \frac{1}{N}\sum_{i=1}^N x_i\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mu\)</span>: データの平均値</p></li>
 <li><p><span class="math notranslate nohighlight">\(N\)</span>: 標本数</p></li>
@@ -553,19 +554,19 @@ $<span class="math notranslate nohighlight">\(\mu = \frac{1}{N}\sum_{i=1}^N x_i\
 <ul class="simple">
 <li><p>（標本）分散は下記の式で定義されます．</p>
 <ul>
-<li><p>分散が大きいほど，各データが平均値から大きくズレていることを意味します．
-$<span class="math notranslate nohighlight">\(\sigma^2 = \frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2\)</span>$</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(\sigma^2\)</span>: 分散</p></li>
-<li><p><span class="math notranslate nohighlight">\(N\)</span>: 標本数</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: 持っているデータの平均値</p></li>
-<li><p><span class="math notranslate nohighlight">\(x_i\)</span>: データ</p></li>
-</ul>
-</li>
-<li><p>上記式の分母を<span class="math notranslate nohighlight">\(N-1\)</span>にすると不偏分散となります．</p></li>
+<li><p>分散が大きいほど，各データが平均値から大きくズレていることを意味します．</p></li>
 </ul>
 </li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\sigma^2 = \frac{1}{N}\sum_{i=1}^N (x_i - \mu)^2\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * $\sigma^2$: 分散
+    * $N$: 標本数
+    * $\mu$: 持っているデータの平均値
+    * $x_i$: データ
+* 上記式の分母を$N-1$にすると不偏分散となります．
+</pre></div>
+</div>
 <p><font color="blue">【実習】年齢データの分散を計算する．</font></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#--#</span>
 <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">ages</span><span class="p">)</span>
