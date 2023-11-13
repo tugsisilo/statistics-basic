@@ -1,4 +1,4 @@
 # binds-training
-Website made with Jupyter Book for learning data science.
+Website made with Jupyter Book for learning basic statistics.
 
 https://tugsisilo.github.io/statistics-basic/
