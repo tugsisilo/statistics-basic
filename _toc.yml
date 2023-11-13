@@ -11,7 +11,3 @@ parts:
   - file: notebook/pandas
   - file: notebook/matplotlib
   - file: notebook/scikit-learn
-- caption: 付録
-  numbered: False
-  chapters:
-  - file: notebook/worksheet
